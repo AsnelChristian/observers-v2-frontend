@@ -6,6 +6,15 @@
 .navigation {
   padding-top: 3rem;
   padding-bottom: 3rem;
+
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &__logo {
+    height: 3rem;
+  }
 }
 
 .hero-box {
