@@ -1,9 +1,10 @@
 :root {
   --color-primary: #D80C3D;
-  --color-primary-test: #ba9545;
+  --color-secondary: #ba9545;
   --color-black-lighter: #1d1d1d;
   --color-black: #000000;
-  --color-white: #ffffff; }
+  --color-white: #ffffff;
+  --color-white-blue: #f7f9fe; }
 
 *,
 *::after,
@@ -39,12 +40,6 @@ body {
   grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 13.7rem) [col-end]) [center-end] 1fr [full-end];
   grid-row-gap: 5rem; }
 
-.topics {
-  background-color: var(--color-primary); }
-
-.footer {
-  background-color: var(--color-black); }
-
 .header {
   grid-row: 1/2;
   grid-column: center-start / center-end;
@@ -70,7 +65,7 @@ body {
   justify-content: space-between; }
   .hero-box__msg {
     flex: 1;
-    padding-right: 3rem; }
+    padding-right: 4rem; }
   .hero-box__hero {
     flex-basis: 45%;
     overflow: hidden; }
@@ -88,11 +83,13 @@ body {
 
 .topics {
   grid-row: 2/3;
-  grid-column: center-start/center-end; }
+  grid-column: center-start/center-end;
+  background-color: var(--color-white-blue); }
 
 .footer {
   grid-row: 3/-1;
-  grid-column: full-start/full-end; }
+  grid-column: full-start/full-end;
+  background-color: var(--color-black); }
 
 .btn,
 .btn .btn:link,
@@ -140,12 +137,12 @@ body {
       border: 2px solid #a8092f; }
 
 .btn--brown {
-  border: 2px solid var(--color-primary-test);
-  color: var(--color-primary-test); }
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary); }
   .btn--brown::after {
-    background-color: var(--color-primary-test); }
+    background-color: var(--color-secondary); }
   .btn--brown--filled {
-    background-color: var(--color-primary-test);
+    background-color: var(--color-secondary);
     color: var(--color-white);
     transition: all .3s; }
     .btn--brown--filled:hover {
@@ -197,7 +194,7 @@ body {
         height: 100%;
         z-index: -1; }
       .nav__link--cta--secondary::after {
-        background-color: var(--color-primary-test);
+        background-color: var(--color-secondary);
         transform-origin: right; }
       .nav__link--cta:hover {
         color: var(--color-white);
@@ -257,7 +254,7 @@ body {
   font-style: italic !important; }
 
 .text-color-primary {
-  color: var(--color-primary-test) !important; }
+  color: var(--color-secondary) !important; }
 
 .text-bold {
   font-weight: bold !important; }

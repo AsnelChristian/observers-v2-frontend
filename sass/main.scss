@@ -1,13 +1,13 @@
 @import 'base/base';
 @import 'base/typography';
+@import 'base/utils';
 
-@import 'grid';
-@import 'header';
-@import 'topics';
-@import 'footer';
 
-@import 'btn';
-@import 'nav';
-@import 'scroll-down';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/topics';
+@import 'layout/footer';
 
-@import 'utils';
+@import 'components/btn';
+@import 'components/nav';
+@import 'components/scroll-down';

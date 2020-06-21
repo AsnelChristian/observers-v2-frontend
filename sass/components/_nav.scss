@@ -56,7 +56,7 @@
         z-index: -1;
       }
       &--secondary::after {
-        background-color: var(--color-primary-test);
+        background-color: var(--color-secondary);
         transform-origin: right;
       }
 

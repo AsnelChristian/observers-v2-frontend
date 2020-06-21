@@ -59,24 +59,24 @@
     }
   }
   &--brown {
-    border: 2px solid var(--color-primary-test);
-    color: var(--color-primary-test);
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
 
     &::after {
-      background-color: var(--color-primary-test);
+      background-color: var(--color-secondary);
     }
     &--filled {
-      background-color: var(--color-primary-test);
+      background-color: var(--color-secondary);
       color: var(--color-white);
 
       transition: all .3s;
       &:hover {
-        background-color: lighten($color-primary-test, 10%);
-        border: 2px solid lighten($color-primary-test, 10%);
+        background-color: lighten($color-secondary, 10%);
+        border: 2px solid lighten($color-secondary, 10%);
       }
       &:active {
-        background-color: darken($color-primary-test, 10%);
-        border: 2px solid darken($color-primary-test, 10%);
+        background-color: darken($color-secondary, 10%);
+        border: 2px solid darken($color-secondary, 10%);
       }
     }
   }
