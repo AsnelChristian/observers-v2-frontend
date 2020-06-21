@@ -1,6 +1,14 @@
 .header {
   grid-row: 1/2;
   grid-column: center-start / center-end;
+  position: relative;
+
+  &__scroll-down {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .navigation {

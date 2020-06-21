@@ -1,6 +1,6 @@
 .btn {
   &,
-  .btn:active,
+  .btn:link,
   .btn:visited {
     font-size: $default-font-size;
     text-decoration: none;
@@ -12,22 +12,72 @@
     letter-spacing: .1rem;
   }
 
+  &--fill {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: all .3s .1s ease-in;
+      z-index: -1;
+    }
+
+
+    &:hover, &:active {
+      color: var(--color-white);
+      &::after {transform: scaleX(1);}
+    }
+  }
+
+
   &--pink {
     border: 2px solid var(--color-primary);
     color: var(--color-primary);
 
+    &::after {
+      background-color: var(--color-primary);
+    }
     &--filled {
       background-color: var(--color-primary);
       color: var(--color-white);
+
+      transition: all .3s;
+      &:hover {
+        background-color: lighten($color-primary, 10%);
+        border: 2px solid lighten($color-primary, 10%);
+      }
+      &:active {
+        background-color: darken($color-primary, 10%);
+        border: 2px solid darken($color-primary, 10%);
+      }
     }
   }
   &--brown {
     border: 2px solid var(--color-primary-test);
     color: var(--color-primary-test);
 
+    &::after {
+      background-color: var(--color-primary-test);
+    }
     &--filled {
       background-color: var(--color-primary-test);
       color: var(--color-white);
+
+      transition: all .3s;
+      &:hover {
+        background-color: lighten($color-primary-test, 10%);
+        border: 2px solid lighten($color-primary-test, 10%);
+      }
+      &:active {
+        background-color: darken($color-primary-test, 10%);
+        border: 2px solid darken($color-primary-test, 10%);
+      }
     }
   }
 }
