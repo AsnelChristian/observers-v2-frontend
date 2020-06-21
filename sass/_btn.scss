@@ -1,0 +1,32 @@
+.btn {
+  &,
+  .btn:active,
+  .btn:visited {
+    text-decoration: none;
+    display: inline-block;
+
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    letter-spacing: .1rem;
+  }
+
+  &--pink {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+
+    &--filled {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+  &--brown {
+    border: 2px solid var(--color-primary-test);
+    color: var(--color-primary-test);
+
+    &--filled {
+      background-color: var(--color-primary-test);
+      color: var(--color-white);
+    }
+  }
+}

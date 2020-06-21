@@ -1,3 +1,10 @@
+:root {
+  --color-primary: #D80C3D;
+  --color-primary-test: #ba9545;
+  --color-black-lighter: #1d1d1d;
+  --color-black: #000000;
+  --color-white: #ffffff; }
+
 *,
 *::after,
 *::before {
@@ -12,4 +19,92 @@ html {
 body {
   font-family: 'PT serif', sans-serif;
   font-weight: 400;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  color: var(--color-black-lighter); }
+
+.heading--primary {
+  font-family: 'Frank Ruhl Libre', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 3rem; }
+
+.paragraph {
+  font-weight: 400; }
+  .paragraph--hero {
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 4rem; }
+
+.container {
+  display: grid;
+  grid-template-rows: minmax(min-content, 95vh) repeat(2, min-content);
+  grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 13.7rem) [col-end]) [center-end] 1fr [full-end];
+  grid-row-gap: 5rem; }
+
+.topics {
+  background-color: var(--color-primary); }
+
+.footer {
+  background-color: var(--color-black); }
+
+.header {
+  grid-row: 1/2;
+  grid-column: center-start / center-end; }
+
+.navigation {
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+
+.hero-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .hero-box__msg {
+    flex: 1;
+    padding-right: 3rem; }
+  .hero-box__hero {
+    flex-basis: 45%;
+    overflow: hidden; }
+  .hero-box__img {
+    height: 55rem;
+    background-size: cover; }
+
+.cta {
+  width: 100%;
+  list-style: none;
+  display: block; }
+  .cta__item {
+    display: inline-block;
+    margin-right: 3rem; }
+
+.topics {
+  grid-row: 2/3;
+  grid-column: center-start/center-end; }
+
+.footer {
+  grid-row: 3/-1;
+  grid-column: full-start/full-end; }
+
+.btn,
+.btn .btn:active,
+.btn .btn:visited {
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Fjalla One', sans-serif;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  letter-spacing: .1rem; }
+
+.btn--pink {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary); }
+  .btn--pink--filled {
+    background-color: var(--color-primary);
+    color: var(--color-white); }
+
+.btn--brown {
+  border: 2px solid var(--color-primary-test);
+  color: var(--color-primary-test); }
+  .btn--brown--filled {
+    background-color: var(--color-primary-test);
+    color: var(--color-white); }

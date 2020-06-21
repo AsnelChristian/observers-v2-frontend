@@ -1,0 +1,42 @@
+.header {
+  grid-row: 1/2;
+  grid-column: center-start / center-end;
+}
+
+.navigation {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.hero-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__msg {
+    flex: 1;
+    padding-right: 3rem;
+  }
+  &__hero {
+    flex-basis: 45%;
+    overflow: hidden;
+  }
+
+  &__img {
+    height: 55rem;
+    background-size: cover;
+  }
+}
+
+.cta {
+  width: 100%;
+  list-style: none;
+
+  display: block;
+
+  &__item {
+    display: inline-block;
+
+    margin-right: 3rem;
+  }
+}

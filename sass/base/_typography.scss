@@ -2,4 +2,22 @@ body {
   font-family: 'PT serif', sans-serif;
   font-weight: 400;
   font-size: $default-font-size;
+  color: var(--color-black-lighter);
+}
+
+.heading--primary {
+  font-family: 'Frank Ruhl Libre', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.paragraph {
+  font-weight: 400;
+
+  &--hero {
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+  }
 }
