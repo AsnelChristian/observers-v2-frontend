@@ -1,14 +1,22 @@
 body {
-  font-family: 'PT serif', sans-serif;
+  font-family: 'PT serif', serif;
   font-weight: 400;
   font-size: $default-font-size;
   color: var(--color-black-lighter);
 }
 
 .heading--primary {
-  font-family: 'Frank Ruhl Libre', sans-serif;
+  font-family: 'Frank Ruhl Libre', serif;
   font-size: 3.2rem;
   font-weight: 700;
+}
+
+.heading--secondary {
+  font-family: 'Frank Ruhl Libre', serif;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  letter-spacing: .2rem;
+  font-weight: 500;
 }
 
 .paragraph {

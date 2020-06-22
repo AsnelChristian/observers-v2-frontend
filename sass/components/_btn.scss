@@ -1,7 +1,7 @@
 .btn {
   &,
-  .btn:link,
-  .btn:visited {
+  &:link,
+  &:visited {
     font-size: $default-font-size;
     text-decoration: none;
     display: inline-block;
@@ -79,5 +79,19 @@
         border: 2px solid darken($color-secondary, 10%);
       }
     }
+  }
+}
+
+.btn-black {
+  &,
+  &:link,
+  &:visited {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    transition: all .2s ease;
+  }
+  &:hover,
+  &:active {
+    background-color: var(--color-secondary);
   }
 }
