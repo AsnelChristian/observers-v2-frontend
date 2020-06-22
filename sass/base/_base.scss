@@ -3,11 +3,15 @@ $color-secondary: #ba9545;
 $color-black: #000000;
 $default-font-size: 1.6rem;
 
+$box-shadow-subtle: 0 .1rem .1rem 0 rgba($color-black, .14), 0 .2rem .1rem -.1rem rgba($color-black, .12), 0 .1rem .3rem 0 rgba($color-black, .20);
+
+
 
 :root {
   --color-primary: #D80C3D;
   --color-secondary: #ba9545;
 
+  --color-grey-lighter: #ddd;
   --color-grey-light: #7a7a7a;
 
   --color-black-lighter: #1d1d1d;

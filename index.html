@@ -13,7 +13,7 @@
     </head>
     <body class="container">
         <header class="header">
-            <a href="#" class="header__scroll-down scroll-down">
+            <a href="#topics" class="header__scroll-down scroll-down">
                 <div class="scroll-down__mouse"><span></span></div>
                 <div class="scroll-down__arrow"><span></span></div>
             </a>
@@ -21,7 +21,7 @@
                 <img src="img/theobserversIcon2x.png" alt="" class="navigation__logo">
                 <ul class="nav">
                     <li class="nav__item"><a href="#" class="nav__link nav__link--baseline nav__link--active">Home</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link nav__link--baseline">Topics</a></li>
+                    <li class="nav__item"><a href="#topics" class="nav__link nav__link--baseline">Topics</a></li>
                     <li class="nav__item"><a href="#" class="nav__link nav__link--baseline">About</a></li>
                     <li class="nav__item"><a href="#" class="nav__link nav__link--cta">Sign in</a></li>
                     <li class="nav__item"><a href="#" class="nav__link nav__link--cta nav__link--cta--secondary">Sign up</a></li>
@@ -32,7 +32,7 @@
                     <h1 class="heading--primary margin-bottom-small">Observe and share</h1>
                     <p class="paragraph--hero margin-bottom-medium">Be the reporter &ndash; <span class="text-italics text-color-primary text-bold">the observer</span>. Come and share your stories, let the world know what you have seen. Express your opinion on several topics and help make the world a better place.</p>
                     <ul class="cta">
-                        <li class="cta__item"><a href="#" class="btn btn--pink btn--pink--filled cta__link">See Topics</a></li>
+                        <li class="cta__item"><a href="#topics" class="btn btn--pink btn--pink--filled cta__link">See Topics</a></li>
                         <li class="cta__item"><a href="#" class="btn btn--brown btn--fill cta__link">Become an observer</a></li>
                     </ul>
                 </div>
@@ -41,30 +41,80 @@
                 </div>
             </div>
         </header>
-        <section class="topics">
+        <section class="topics" id="topics">
             <h2 class="heading--secondary margin-bottom-small margin-top-medium">Current topics</h2>
             <div class="topics__search-bar"></div>
             <div class="topics__view">
-                <ul class="topic-list">
-                    <li class="topic">
-                        <div class="topic__info">
-                            <div class="topic__info--basics">
-                                <span class="topic__info--time"><a href="#">June 20, 2020</a></span>
-                                <span class="topic__info--location"><a href="#">Koblenz, Germany</a></span>
-                                <span class="topic__info--category"><a href="#">Politics</a></span>
+                <div class="topic-list">
+                    <ul class="topic-cards margin-bottom-small">
+                        <li class="topic margin-bottom-extra-small">
+                            <div class="topic__info">
+                                <div class="topic__info--basics">
+                                    <span class="topic__info--time"><a href="#">June 20, 2020</a></span>
+                                    <span class="topic__info--location"><a href="#">Koblenz, Germany</a></span>
+                                    <span class="topic__info--category"><a href="#">Politics</a></span>
+                                </div>
+                                <div class="topic__info--reports">
+                                    <span class="topic__info--report-count"><a href="#">27,275 reports</a></span>
+                                </div>
                             </div>
-                            <div class="topic__info--reports">
-                                <span class="topic__info--report-count"><a href="#">27,275 reports</a></span>
+                            <img src="img/politics.jpg" alt="" class="topic__img margin-bottom-small">
+                            <p class="topic__title"><a href="#">Only one side gets to decide on everything. Is this really a democracy?</a></p>
+                            <p class="topic__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda, culpa cupiditate dolorum eligendi eos ex explicabo laudantium minima minus molestiae molestias nemo officiis perferendis praesentium ratione recusandae ullam unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet maxime nesciunt praesentium quibusdam quos temporibus, ut! Culpa distinctio facilis mollitia nam nihil, nisi, obcaecati porro repellat saepe sunt unde...</p>
+                            <div class="topic__read-more margin-bottom-medium">
+                                <a href="#" class="btn btn-black">Read more</a>
                             </div>
-                        </div>
-                        <img src="img/politics.jpg" alt="" class="topic__img margin-bottom-small">
-                        <p class="topic__title"><a href="#">Only one side gets to decide on everything. Is this really a democracy?</a></p>
-                        <p class="topic__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda, culpa cupiditate dolorum eligendi eos ex explicabo laudantium minima minus molestiae molestias nemo officiis perferendis praesentium ratione recusandae ullam unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet maxime nesciunt praesentium quibusdam quos temporibus, ut! Culpa distinctio facilis mollitia nam nihil, nisi, obcaecati porro repellat saepe sunt unde...</p>
-                        <div class="topic__read-more margin-bottom-medium">
-                            <a href="#" class="btn btn-black">Read more</a>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                        <li class="topic margin-bottom-extra-small">
+                            <div class="topic__info">
+                                <div class="topic__info--basics">
+                                    <span class="topic__info--time"><a href="#">June 20, 2020</a></span>
+                                    <span class="topic__info--location"><a href="#">Koblenz, Germany</a></span>
+                                    <span class="topic__info--category"><a href="#">Politics</a></span>
+                                </div>
+                                <div class="topic__info--reports">
+                                    <span class="topic__info--report-count"><a href="#">27,275 reports</a></span>
+                                </div>
+                            </div>
+                            <img src="img/parliament.jpg" alt="" class="topic__img margin-bottom-small">
+                            <p class="topic__title"><a href="#">Barriers to the creation and operation of private enterprises</a></p>
+                            <p class="topic__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda, culpa cupiditate dolorum eligendi eos ex explicabo laudantium minima minus molestiae molestias nemo officiis perferendis praesentium ratione recusandae ullam unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet maxime nesciunt praesentium quibusdam quos temporibus, ut! Culpa distinctio facilis mollitia nam nihil, nisi, obcaecati porro repellat saepe sunt unde...</p>
+                            <div class="topic__read-more margin-bottom-medium">
+                                <a href="#" class="btn btn-black">Read more</a>
+                            </div>
+                        </li>
+                        <li class="topic margin-bottom-extra-small">
+                            <div class="topic__info">
+                                <div class="topic__info--basics">
+                                    <span class="topic__info--time"><a href="#">June 20, 2020</a></span>
+                                    <span class="topic__info--location"><a href="#">Koblenz, Germany</a></span>
+                                    <span class="topic__info--category"><a href="#">Climate & Environment</a></span>
+                                </div>
+                                <div class="topic__info--reports">
+                                    <span class="topic__info--report-count"><a href="#">27,275 reports</a></span>
+                                </div>
+                            </div>
+                            <img src="img/deforestation.jpg" alt="" class="topic__img margin-bottom-small">
+                            <p class="topic__title"><a href="#">The consequences of deforestation in a region</a></p>
+                            <p class="topic__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda, culpa cupiditate dolorum eligendi eos ex explicabo laudantium minima minus molestiae molestias nemo officiis perferendis praesentium ratione recusandae ullam unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet maxime nesciunt praesentium quibusdam quos temporibus, ut! Culpa distinctio facilis mollitia nam nihil, nisi, obcaecati porro repellat saepe sunt unde...</p>
+                            <div class="topic__read-more margin-bottom-medium">
+                                <a href="#" class="btn btn-black">Read more</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="pagination">
+                        <li class="pagination__item"><a href="#"> &laquo; </a></li>
+                        <li class="pagination__item"><a href="#"> 1 </a></li>
+                        <li class="pagination__item"><a href="#"> 2 </a></li>
+                        <li class="pagination__item--active pagination__item"><a href="#"> 3 </a></li>
+                        <li class="pagination__item"><a href="#"> 4 </a></li>
+                        <li class="pagination__item"><a href="#"> 5 </a></li>
+                        <li class="pagination__item"><a href="#"> 6 </a></li>
+                        <li class="pagination__item"><a href="#"> 7 </a></li>
+                        <li class="pagination__item"><a href="#"> 8 </a></li>
+                        <li class="pagination__item"><a href="#"> &raquo; </a></li>
+                    </ul>
+                </div>
                 <div class="topic-stats"></div>
             </div>
         </section>

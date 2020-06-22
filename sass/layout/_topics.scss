@@ -12,4 +12,8 @@
 .topic-list {
   list-style: none;
   flex-basis: 65%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
