@@ -19,9 +19,20 @@ body {
   font-weight: 500;
 }
 
-.paragraph {
-  &--hero {
-    font-weight: 500;
-    line-height: 1.8;
-  }
+.heading--tertiary {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 2rem;
+  font-weight: 500;
 }
+
+.paragraph--small {
+  font-size: 1.4rem;
+  line-height: 2.3rem;
+  color: var(--color-grey-light);
+}
+
+.paragraph--hero {
+  font-weight: 500;
+  line-height: 1.8;
+}
+

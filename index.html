@@ -45,15 +45,57 @@
         </header>
         <section class="topics" id="topics">
             <h2 class="heading--secondary margin-bottom-medium margin-top-medium">Current topics</h2>
-            <div class="topics__search-bar margin-bottom-medium">
-                <form action="#" class="search">
-                    <input type="text" class="search__input" placeholder="Search topics">
-                    <button class="search__button">
-                        <svg class="search__icon">
-                            <use xlink:href="img/sprite.svg#icon-search"></use>
-                        </svg>
-                    </button>
-                </form>
+            <div class="topics__search-bar margin-bottom-large">
+                <div class="topics__search-box">
+                    <form action="#" class="search">
+                        <input type="text" class="search__input" placeholder="Search topics">
+                        <button class="search__button">
+                            <svg class="search__icon">
+                                <use xlink:href="img/sprite.svg#icon-search"></use>
+                            </svg>
+                        </button>
+
+                        <div class="search__quick-results">
+                            <div class="search__directives">
+                                <p class="search__results--count">50 results found...</p>
+                            </div>
+                            <ul class="search__list">
+                                <li class="search__item">
+                                    <a href="#" class="search__item--info">
+                                        <div class="search__item--span">
+                                            <p class="search__item--title heading--tertiary margin-bottom-extra-small">Only one side gets to decide on everything. Is this really a democracy?</p>
+                                            <span class="search__item--description paragraph--small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus exercitationem laudantium minus nisi quaerat qui vero. Aliquam doloribus est iure minima molestiae neque obcaecati pariatur, quos repudiandae, sint tempore.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="search__item">
+                                    <a href="#" class="search__item--info">
+                                        <div class="search__item--span">
+                                            <p class="search__item--title heading--tertiary margin-bottom-extra-small">Barriers to the creation and operation of private enterprises</p>
+                                            <span class="search__item--description paragraph--small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus exercitationem laudantium minus nisi quaerat qui vero. Aliquam doloribus est iure minima molestiae neque obcaecati pariatur, quos repudiandae, sint tempore.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="search__item">
+                                    <a href="#" class="search__item--info">
+                                        <div class="search__item--span">
+                                            <p class="search__item--title heading--tertiary margin-bottom-extra-small">The consequences of deforestation in a region</p>
+                                            <span class="search__item--description paragraph--small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus exercitationem laudantium minus nisi quaerat qui vero. Aliquam doloribus est iure minima molestiae neque obcaecati pariatur, quos repudiandae, sint tempore.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="search__item">
+                                    <a href="#" class="search__item--info">
+                                        <div class="search__item--span">
+                                            <p class="search__item--title heading--tertiary margin-bottom-extra-small">Only one side gets to decide on everything. Is this really a democracy?</p>
+                                            <span class="search__item--description paragraph--small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus exercitationem laudantium minus nisi quaerat qui vero. Aliquam doloribus est iure minima molestiae neque obcaecati pariatur, quos repudiandae, sint tempore.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
                 <div class="topics__search-bar--filters">
                     <div class="dropdown categories-dropdown">
                         <span class="dropdown__text categories-dropdown__text">Categories
@@ -156,7 +198,32 @@
                         <li class="pagination__item"><a href="#"> &raquo; </a></li>
                     </ul>
                 </div>
-                <div class="topic-stats"></div>
+                <div class="topic-stats">
+                    <h3 class="topic-stats__title margin-bottom-small">Trending topics</h3>
+                    <ul class="topic-stats__list">
+                        <li class="topic-stats__item">
+                            <img src="img/politics.jpg" alt="" class="topic-stats__item--img">
+                            <div class="topic-stats__item--info">
+                                <a href="#" class="topic-stats__item--link margin-bottom-extra-small">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                <p class="topic-stats__item--date">Last update on July 21, 2020</p>
+                            </div>
+                        </li>
+                        <li class="topic-stats__item">
+                            <img src="img/parliament.jpg" alt="" class="topic-stats__item--img">
+                            <div class="topic-stats__item--info">
+                                <a href="#" class="topic-stats__item--link margin-bottom-extra-small">Covid-19 Outbreak</a>
+                                <p class="topic-stats__item--date">Last update on July 21, 2020</p>
+                            </div>
+                        </li>
+                        <li class="topic-stats__item">
+                            <img src="img/deforestation.jpg" alt="" class="topic-stats__item--img">
+                            <div class="topic-stats__item--info">
+                                <a href="#" class="topic-stats__item--link margin-bottom-extra-small">The consequences of deforestation in a region</a>
+                                <p class="topic-stats__item--date">Last update on July 21, 2020</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
         <footer class="footer">
