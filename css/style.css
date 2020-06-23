@@ -61,6 +61,9 @@ body {
 .margin-top-medium {
   margin-top: 6rem !important; }
 
+.hide {
+  display: none; }
+
 .container {
   display: grid;
   grid-template-rows: minmax(95vh, min-content) repeat(2, min-content);
@@ -111,6 +114,10 @@ body {
 .topics {
   grid-row: 2/3;
   grid-column: center-start/center-end; }
+  .topics__search-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between; }
   .topics__view {
     display: flex;
     align-items: baseline; }
@@ -271,8 +278,59 @@ body {
     line-height: 2.5rem;
     color: var(--color-grey-light); }
   .topic__read-more {
+    display: inline-block; }
+
+.dropdown {
+  display: inline-block;
+  cursor: pointer;
+  position: relative; }
+  .dropdown__text {
     display: inline-block;
-    font-size: 1.3rem; }
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--color-grey-lighter);
+    position: relative;
+    background-color: var(--color-white);
+    margin-left: 2rem; }
+  .dropdown__icon {
+    display: inline-block;
+    margin-left: 1.3rem;
+    width: 1.2rem;
+    height: 1.2rem; }
+  .dropdown__menu {
+    display: none;
+    list-style: none;
+    background-color: var(--color-black);
+    position: absolute;
+    top: 4.4rem;
+    width: 24rem; }
+    .dropdown__menu--left {
+      left: 2rem; }
+    .dropdown__menu--right {
+      right: 0; }
+  .dropdown__item a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1.7rem;
+    padding: 0 2.5rem;
+    border: 1px solid transparent; }
+    .dropdown__item a:hover {
+      color: var(--color-secondary);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-secondary); }
+    .dropdown__item a span {
+      display: block;
+      padding: 2rem 0; }
+  .dropdown__item:not(:last-child) a > span {
+    border-bottom: 1px solid var(--color-black-lighter); }
+
+.categories-dropdown:hover .categories-dropdown__menu {
+  display: block; }
+
+.tags-dropdown:hover .tags-dropdown__menu {
+  display: block; }
 
 .nav {
   list-style: none; }
@@ -343,6 +401,34 @@ body {
     background-color: var(--color-secondary);
     border: 1px solid var(--color-secondary);
     color: white; }
+
+.search {
+  flex-basis: 65%;
+  position: relative; }
+  .search__input {
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    border-bottom: 0.2rem solid var(--color-black-lighter);
+    padding: 1.5rem;
+    transition: all .3s; }
+    .search__input:focus {
+      border-bottom: 0.2rem solid var(--color-secondary); }
+  .search__button {
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 0;
+    bottom: .5rem;
+    background-color: var(--color-white); }
+  .search__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    transition: all .3s; }
+  .search__input:focus + .search__button .search__icon {
+    fill: var(--color-secondary); }
 
 .scroll-down {
   display: flex;

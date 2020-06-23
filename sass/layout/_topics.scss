@@ -2,7 +2,12 @@
   grid-row: 2/3;
   grid-column: center-start/center-end;
 
-  &__search-bar {}
+  &__search-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
   &__view {
     display: flex;
     align-items: baseline;

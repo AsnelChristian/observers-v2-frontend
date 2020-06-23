@@ -8,7 +8,9 @@
         <link rel="stylesheet"  href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic|Frank+Ruhl+Libre:400,500,700|Fjalla+One:400" type="text/css" media="all">
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
-        
+
+        <script src="js/index.js" defer=""></script>
+
         <title>Observers &mdash; See, Share, Save!</title>
     </head>
     <body class="container">
@@ -42,8 +44,47 @@
             </div>
         </header>
         <section class="topics" id="topics">
-            <h2 class="heading--secondary margin-bottom-small margin-top-medium">Current topics</h2>
-            <div class="topics__search-bar"></div>
+            <h2 class="heading--secondary margin-bottom-medium margin-top-medium">Current topics</h2>
+            <div class="topics__search-bar margin-bottom-medium">
+                <form action="#" class="search">
+                    <input type="text" class="search__input" placeholder="Search topics">
+                    <button class="search__button">
+                        <svg class="search__icon">
+                            <use xlink:href="img/sprite.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
+                <div class="topics__search-bar--filters">
+                    <div class="dropdown categories-dropdown">
+                        <span class="dropdown__text categories-dropdown__text">Categories
+                            <svg class="dropdown__icon">
+                                <use xlink:href="img/sprite.svg#icon-chevron-thin-down"></use>
+                            </svg>
+                        </span>
+                        <ul class="dropdown__menu dropdown__menu--left categories-dropdown__menu">
+                            <li class="dropdown__item"><a href="#"><span>Politics</span></a></li>
+                            <li class="dropdown__item"><a href="#"><span>Economy</span></a></li>
+                            <li class="dropdown__item"><a href="#"><span>Education</span></a></li>
+                            <li class="dropdown__item"><a href="#"><span>Science</span></a></li>
+                            <li class="dropdown__item"><a href="#"><span>Climate & Environment</span></a></li>
+                            <li class="dropdown__item"><a href="#"><span>Law</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown tags-dropdown">
+                        <span class="dropdown__text tags-dropdown__text">Tags
+                            <svg class="dropdown__icon">
+                                <use xlink:href="img/sprite.svg#icon-chevron-thin-down"></use>
+                            </svg>
+                        </span>
+                        <ul class="dropdown__menu dropdown__menu--right tags-dropdown__menu">
+                            <li class="dropdown__item"><a href="#"><span>Covid-19</span></a></li>
+                            <li class="dropdown__item"><a href="#"><span>Black lives matter</span></a></li>
+                            <li class="dropdown__item"><a href="#"><span>Corruption</span></a></li>
+                            <li class="dropdown__item"><a href="#"><span>5G</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="topics__view">
                 <div class="topic-list">
                     <ul class="topic-cards margin-bottom-small">
