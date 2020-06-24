@@ -108,3 +108,39 @@
     display: inline-block;
   }
 }
+
+
+.topic-card--small {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  &--img {
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+  }
+  &--info {
+    margin-left: 1.5rem;
+  }
+
+  &--link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: 'Frank Ruhl Libre', serif;
+    transition: all .2s;
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+  }
+  &--date {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-grey-light);
+  }
+}

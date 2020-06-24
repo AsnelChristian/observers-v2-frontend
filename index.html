@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+
         <link rel="stylesheet"  href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic|Frank+Ruhl+Libre:400,500,700|Fjalla+One:400" type="text/css" media="all">
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
-
-        <script src="js/index.js" defer=""></script>
 
         <title>Observers &mdash; See, Share, Save!</title>
     </head>
@@ -185,6 +186,9 @@
                             </div>
                         </li>
                     </ul>
+
+                    <div id="mapbox-topics" class="topic-map map margin-bottom-small"></div>
+
                     <ul class="pagination">
                         <li class="pagination__item"><a href="#"> &laquo; </a></li>
                         <li class="pagination__item"><a href="#"> 1 </a></li>
@@ -197,29 +201,30 @@
                         <li class="pagination__item"><a href="#"> 8 </a></li>
                         <li class="pagination__item"><a href="#"> &raquo; </a></li>
                     </ul>
+
                 </div>
                 <div class="topic-stats">
                     <h3 class="topic-stats__title margin-bottom-small">Trending topics</h3>
                     <ul class="topic-stats__list">
-                        <li class="topic-stats__item">
-                            <img src="img/politics.jpg" alt="" class="topic-stats__item--img">
-                            <div class="topic-stats__item--info">
-                                <a href="#" class="topic-stats__item--link margin-bottom-extra-small">Only one side gets to decide on everything. Is this really a democracy?</a>
-                                <p class="topic-stats__item--date">Last update on July 21, 2020</p>
+                        <li class="topic-card--small">
+                            <img src="img/politics.jpg" alt="" class="topic-card--small--img">
+                            <div class="topic-card--small--info">
+                                <a href="#" class="topic-card--small--link margin-bottom-extra-small">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                <p class="topic-card--small--date">Last update on July 21, 2020</p>
                             </div>
                         </li>
-                        <li class="topic-stats__item">
-                            <img src="img/parliament.jpg" alt="" class="topic-stats__item--img">
-                            <div class="topic-stats__item--info">
-                                <a href="#" class="topic-stats__item--link margin-bottom-extra-small">Covid-19 Outbreak</a>
-                                <p class="topic-stats__item--date">Last update on July 21, 2020</p>
+                        <li class="topic-card--small">
+                            <img src="img/parliament.jpg" alt="" class="topic-card--small--img">
+                            <div class="topic-card--small--info">
+                                <a href="#" class="topic-card--small--link margin-bottom-extra-small">Covid-19 Outbreak</a>
+                                <p class="topic-card--small--date">Last update on July 21, 2020</p>
                             </div>
                         </li>
-                        <li class="topic-stats__item">
-                            <img src="img/deforestation.jpg" alt="" class="topic-stats__item--img">
-                            <div class="topic-stats__item--info">
-                                <a href="#" class="topic-stats__item--link margin-bottom-extra-small">The consequences of deforestation in a region</a>
-                                <p class="topic-stats__item--date">Last update on July 21, 2020</p>
+                        <li class="topic-card--small">
+                            <img src="img/deforestation.jpg" alt="" class="topic-card--small--img">
+                            <div class="topic-card--small--info">
+                                <a href="#" class="topic-card--small--link margin-bottom-extra-small">The consequences of deforestation in a region</a>
+                                <p class="topic-card--small--date">Last update on July 21, 2020</p>
                             </div>
                         </li>
                     </ul>
@@ -227,7 +232,8 @@
             </div>
         </section>
         <footer class="footer">
-            Footer
+            <p class="footer__copyright">&copy; All rights reserved theobservers.org</p>
         </footer>
+        <script src="js/index.js"></script>
     </body>
 </html>

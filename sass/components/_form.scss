@@ -50,6 +50,10 @@
     box-shadow: $box-shadow-normal;
     z-index: 2;
     background-color: white;
+
+    &:active {
+      display: block;
+    }
   }
 
   &__list {
