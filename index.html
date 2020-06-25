@@ -130,6 +130,20 @@
             </div>
             <div class="topics__view">
                 <div class="topic-list">
+                    <form class="view-switch margin-bottom-extra-small">
+                        <input type="radio" id="view-switch--list" class="view-switch__input view-switch--list" name="view-selector" checked>
+                        <label for="view-switch--list" class="view-switch__label">
+                            <svg class="view-switch__icon">
+                                <use xlink:href="img/sprite.svg#icon-list"></use>
+                            </svg>
+                        </label>
+                        <input type="radio" id="view-switch--map" class="view-switch__input view-switch--map" name="view-selector">
+                        <label for="view-switch--map" class="view-switch__label">
+                            <svg class="view-switch__icon">
+                                <use xlink:href="img/sprite.svg#icon-map"></use>
+                            </svg>
+                        </label>
+                    </form>
                     <ul class="topic-cards margin-bottom-small">
                         <li class="topic margin-bottom-extra-small">
                             <div class="topic__info">
@@ -187,7 +201,7 @@
                         </li>
                     </ul>
 
-                    <div id="mapbox-topics" class="topic-map map margin-bottom-small"></div>
+                    <div id="mapbox-topics" class="topic-map map margin-bottom-small hide"></div>
 
                     <ul class="pagination">
                         <li class="pagination__item"><a href="#"> &laquo; </a></li>

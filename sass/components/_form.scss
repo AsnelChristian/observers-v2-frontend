@@ -110,3 +110,32 @@
     color: var(--color-grey-light);
   }
 }
+
+.view-switch {
+  display: inline-block;
+
+  &__label {
+    display: inline-block;
+    margin-left: 1rem;
+
+    padding: 1rem 1.5rem;
+    background-color: var(--color-white);
+    box-shadow: $box-shadow-subtle;
+
+    cursor: pointer;
+  }
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-secondary);
+  }
+  &__input {
+    display: none;
+  }
+  &__input:checked + &__label {
+    background-color: var(--color-black);
+    &__icon {
+      fill: var(--color-white);
+    }
+  }
+}

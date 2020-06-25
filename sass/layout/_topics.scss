@@ -39,6 +39,7 @@
 }
 
 .topic-stats {
+  animation: fadeInRight 3s;
   margin-left: 4rem;
   flex: 1;
 
@@ -56,4 +57,8 @@
   &__list {
     list-style: none;
   }
+}
+
+.topic-cards {
+  animation: fadeInLeft 2s;
 }

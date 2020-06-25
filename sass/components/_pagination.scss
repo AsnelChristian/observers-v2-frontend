@@ -1,5 +1,6 @@
 .pagination {
   list-style: none;
+  animation: fadeInLeft 2s;
   &__item {
     display: inline-block;
     a {

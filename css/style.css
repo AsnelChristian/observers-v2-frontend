@@ -1,3 +1,27 @@
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-4rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(4rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
 :root {
   --color-primary: #D80C3D;
   --color-secondary: #ba9545;
@@ -155,6 +179,7 @@ body {
   height: 50rem; }
 
 .topic-stats {
+  animation: fadeInRight 3s;
   margin-left: 4rem;
   flex: 1; }
   .topic-stats__title {
@@ -167,6 +192,9 @@ body {
     border-bottom: 2px solid var(--color-black); }
   .topic-stats__list {
     list-style: none; }
+
+.topic-cards {
+  animation: fadeInLeft 2s; }
 
 .footer {
   grid-row: 3/-1;
@@ -402,6 +430,9 @@ body {
 .tags-dropdown:hover .tags-dropdown__menu {
   display: block; }
 
+.map {
+  animation: fadeInBottom 2s; }
+
 .marker {
   width: 1.3rem;
   height: 1.3rem;
@@ -516,7 +547,8 @@ body {
           transform: scaleX(1); }
 
 .pagination {
-  list-style: none; }
+  list-style: none;
+  animation: fadeInLeft 2s; }
   .pagination__item {
     display: inline-block; }
     .pagination__item a {
@@ -618,6 +650,26 @@ body {
     font-style: italic;
     font-size: 1.3rem;
     color: var(--color-grey-light); }
+
+.view-switch {
+  display: inline-block; }
+  .view-switch__label {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-white);
+    box-shadow: rgba(0, 0, 0, 0.08) 0 0 3px 0;
+    cursor: pointer; }
+  .view-switch__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-secondary); }
+  .view-switch__input {
+    display: none; }
+  .view-switch__input:checked + .view-switch__label {
+    background-color: var(--color-black); }
+    .view-switch__input:checked + .view-switch__label__icon {
+      fill: var(--color-white); }
 
 .scroll-down {
   display: flex;

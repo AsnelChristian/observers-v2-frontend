@@ -84,3 +84,21 @@ locations.forEach((loc, i) => {
 });
 
 map.fitBounds(bounds);
+
+const topicsListViewToggle = document.querySelector('#view-switch--list');
+const topicsMapViewToggle = document.querySelector('#view-switch--map');
+const topicsList = document.querySelector('.topic-cards');
+const topicsMap = document.querySelector('.topic-map');
+const topicsPagination = document.querySelector('.pagination');
+
+topicsListViewToggle.addEventListener('click', e => {
+    topicsMap.classList.add('hide');
+    topicsList.classList.remove('hide');
+    topicsPagination.classList.remove('hide');
+});
+
+topicsMapViewToggle.addEventListener('click', e => {
+   topicsList.classList.add('hide');
+   topicsPagination.classList.add('hide');
+   topicsMap.classList.remove('hide');
+});
