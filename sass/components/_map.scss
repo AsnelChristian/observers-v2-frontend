@@ -1,5 +1,9 @@
 .map {
-  animation: fadeInBottom 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .marker {
@@ -87,4 +91,8 @@
 .mapboxgl-popup-close-button {
   top: .5rem;
   right: .6rem;
+}
+
+.mapboxgl-canvas {
+  left: 0;
 }

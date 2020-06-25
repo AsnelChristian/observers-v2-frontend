@@ -1,3 +1,9 @@
+const topicsListViewToggle = document.querySelector('#view-switch--list');
+const topicsMapViewToggle = document.querySelector('#view-switch--map');
+const topicsList = document.querySelector('.topic-cards');
+const topicsMap = document.querySelector('.topic-map');
+const topicsPagination = document.querySelector('.pagination');
+
 const sampleData = [{
     "title": "The consequences of deforestation in a region",
     "category": "Climate & Environment",
@@ -83,13 +89,9 @@ locations.forEach((loc, i) => {
     bounds.extend(extendCoord);
 });
 
+
 map.fitBounds(bounds);
 
-const topicsListViewToggle = document.querySelector('#view-switch--list');
-const topicsMapViewToggle = document.querySelector('#view-switch--map');
-const topicsList = document.querySelector('.topic-cards');
-const topicsMap = document.querySelector('.topic-map');
-const topicsPagination = document.querySelector('.pagination');
 
 topicsListViewToggle.addEventListener('click', e => {
     topicsMap.classList.add('hide');
@@ -98,7 +100,10 @@ topicsListViewToggle.addEventListener('click', e => {
 });
 
 topicsMapViewToggle.addEventListener('click', e => {
-   topicsList.classList.add('hide');
-   topicsPagination.classList.add('hide');
-   topicsMap.classList.remove('hide');
+    topicsList.classList.add('hide');
+    topicsPagination.classList.add('hide');
+    topicsMap.classList.remove('hide');
+
+    map.resize();
+    map.fitBounds(bounds);
 });
