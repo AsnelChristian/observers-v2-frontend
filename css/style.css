@@ -353,6 +353,15 @@ body {
     color: var(--color-grey-light); }
   .topic__read-more {
     display: inline-block; }
+  .topic__tags {
+    list-style: none; }
+    .topic__tags--item {
+      display: inline-block; }
+      .topic__tags--item:not(:last-child) {
+        margin-top: 1.2rem;
+        margin-right: 1.2rem; }
+  .topic__author {
+    text-align: right; }
 
 .topic-card--small {
   display: flex; }
@@ -443,18 +452,17 @@ body {
   width: 1.3rem;
   height: 1.3rem;
   border-radius: 50%;
-  padding: .5rem;
   cursor: pointer;
   position: absolute; }
   .marker::after {
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     width: 101%;
     height: 101%;
-    top: 50%;
-    left: 50%;
     border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1); }
+    transform: scale(1); }
   .marker--default::after {
     background-color: #ba9545;
     box-shadow: 0 0 0 0 #ba9545;
@@ -466,6 +474,40 @@ body {
       background-color: #D80C3D;
       box-shadow: 0 0 0 0 #d80c3d;
       animation: pulse--trending 2s infinite; }
+  .marker--cluster--20 {
+    width: 2.5rem;
+    height: 2.5rem; }
+  .marker--cluster--50 {
+    width: 3rem;
+    height: 3rem; }
+  .marker--cluster--100 {
+    width: 3.5rem;
+    height: 3.5rem; }
+  .marker--cluster--500 {
+    width: 4rem;
+    height: 4rem; }
+  .marker--cluster--1000 {
+    width: 4.5rem;
+    height: 4.5rem; }
+  .marker--cluster--10000 {
+    width: 5rem;
+    height: 5rem; }
+  .marker--cluster--inf {
+    width: 6rem;
+    height: 6rem; }
+  .marker--cluster span {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    color: var(--color-secondary);
+    z-index: 10; }
+  .marker--cluster::after {
+    background-color: #000000;
+    box-shadow: 0 0 0 0 black;
+    animation: pulse--cluster 2s infinite; }
 
 @keyframes pulse--default {
   0% {
@@ -488,6 +530,17 @@ body {
   100% {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(216, 12, 61, 0); } }
+
+@keyframes pulse--cluster {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8); }
+  80% {
+    transform: scale(1);
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0); }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); } }
 
 .topic-popup {
   width: 34rem; }
@@ -727,3 +780,18 @@ body {
     opacity: .75; }
   100% {
     opacity: 1; } }
+
+.tag {
+  display: inline-block;
+  padding: .7rem 1.3rem;
+  background-color: var(--color-secondary);
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.2rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s; }
+  .tag:hover {
+    background-color: #c8aa6a; }
+  .tag:active {
+    background-color: #a7863e; }
