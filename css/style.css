@@ -459,8 +459,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 101%;
-    height: 101%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     transform: scale(1); }
   .marker--default::after {
@@ -549,11 +549,18 @@ body {
 
 .mapboxgl-popup-content {
   background-color: var(--color-white);
-  box-shadow: rgba(0, 0, 0, 0.08) 0 0 3px 0; }
+  box-shadow: rgba(0, 0, 0, 0.08) 0 0 3px 0;
+  max-height: 23rem;
+  overflow-y: scroll; }
 
 .mapboxgl-popup-close-button {
   top: .5rem;
-  right: .6rem; }
+  right: .6rem;
+  font-size: 1.5rem;
+  color: var(--color-secondary); }
+  .mapboxgl-popup-close-button:hover {
+    transform: scale(1.01);
+    color: #a8092f; }
 
 .mapboxgl-canvas {
   left: 0; }
