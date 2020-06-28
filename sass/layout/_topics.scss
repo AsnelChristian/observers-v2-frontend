@@ -64,3 +64,10 @@
 .topic-cards {
   animation: fadeInLeft 2s;
 }
+
+.add-topic {
+  &__btn {
+    width: 100%;
+    text-align: center;
+  }
+}

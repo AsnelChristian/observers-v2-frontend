@@ -230,6 +230,10 @@ body {
 .topic-cards {
   animation: fadeInLeft 2s; }
 
+.add-topic__btn {
+  width: 100%;
+  text-align: center; }
+
 .footer {
   grid-row: 3/-1;
   grid-column: full-start/full-end;
@@ -298,6 +302,12 @@ body {
     .btn--brown--filled:active {
       background-color: #957737;
       border: 2px solid #957737; }
+
+.btn__icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: .5rem;
+  fill: var(--color-white); }
 
 .btn-black, .btn-black:link, .btn-black:visited {
   color: var(--color-white);
