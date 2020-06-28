@@ -37,7 +37,8 @@ const sampleData = [
                 52.643482
             ]
         },
-        "title": "some topic about some issue, from an observer"
+        "title": "some topic about some issue, from an observer",
+        "rank": 1
     },
     {
         "type": "Feature",
@@ -48,7 +49,8 @@ const sampleData = [
                 52.633333
             ]
         },
-        "title": "some topic about some issue, from an observer"
+        "title": "some topic about some issue, from an observer",
+        "rank": 3
     },
     {
         "type": "Feature",
@@ -59,7 +61,8 @@ const sampleData = [
                 52.629348
             ]
         },
-        "title": "some topic about some issue, from an observer"
+        "title": "some topic about some issue, from an observer",
+        "rank": 2
     },
     {
         "type": "Feature",
@@ -70,7 +73,8 @@ const sampleData = [
                 52.629835
             ]
         },
-        "title": "some topic about some issue, from an observer"
+        "title": "some topic about some issue, from an observer",
+        "rank": 4
     },
     {
         "type": "Feature",
@@ -81,7 +85,8 @@ const sampleData = [
                 52.639138
             ]
         },
-        "title": "some topic about some issue, from an observer"
+        "title": "some topic about some issue, from an observer",
+        "rank": 5
     },
     {
         "type": "Feature",
@@ -2308,7 +2313,7 @@ const update = zoom => {
             anchor: 'center'
         }).setLngLat(cluster.geometry.coordinates);
 
-        if (cluster.properties) {
+        if (cluster.properties && cluster.properties.cluster) {
             el.classList.add('marker--cluster');
             el.classList.add(getClusterElementClass(cluster.properties.point_count));
             el.innerHTML = `<span>${cluster.properties.point_count_abbreviated}</span>`;
@@ -2324,7 +2329,11 @@ const update = zoom => {
                 })
             }
         } else {
-            el.classList.add('marker--default');
+            if (cluster.rank && cluster.rank <= 5) {
+                el.classList.add('marker--trending');
+            } else {
+                el.classList.add('marker--default');
+            }
             popupHtml = getPopupHTML(cluster.title);
             addPopup(marker, popupHtml, 'topic-popup');
         }

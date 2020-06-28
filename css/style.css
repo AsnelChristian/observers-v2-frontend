@@ -90,7 +90,7 @@ body {
   .link-info--normal {
     display: block;
     color: inherit;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 500;
     font-family: 'Frank Ruhl Libre', serif;
     transition: all .2s; }
@@ -104,7 +104,7 @@ body {
     color: var(--color-primary);
     letter-spacing: .2rem; }
   .link-info--category--small:link, .link-info--category--small:visited {
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: .1rem; }
 
 .text-italics {
@@ -534,24 +534,24 @@ body {
 
 @keyframes pulse--trending {
   0% {
-    transform: scale(0.9);
+    transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(216, 12, 61, 0.8); }
   80% {
     transform: scale(1);
     box-shadow: 0 0 0 1rem rgba(216, 12, 61, 0); }
   100% {
-    transform: scale(0.9);
+    transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(216, 12, 61, 0); } }
 
 @keyframes pulse--cluster {
   0% {
-    transform: scale(0.9);
+    transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8); }
   80% {
     transform: scale(1);
     box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0); }
   100% {
-    transform: scale(0.9);
+    transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); } }
 
 .topic-popup {
