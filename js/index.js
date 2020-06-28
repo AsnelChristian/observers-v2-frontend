@@ -2236,14 +2236,17 @@ const map = new mapboxgl.Map({
     maxZoom: 17
 });
 const getPopupHTML = title => {
-    return`<div class="topic-card--small">
-               <img src="img/deforestation.jpg" alt="" class="topic-card--small--img">
-               <div class="topic-card--small--info">
-                   <a href="#" class="topic-card--small--link margin-bottom-extra-small">
-                        ${title}
-                   </a>
-                   <p class="topic-card--small--date">Last update on July 21, 2020</p>
-               </div>
+    return `<div class="sm-card">
+                <img src="img/politics.jpg" alt="" class="sm-card__img">
+                <div class="sm-card__info">
+                    <div class="sm-card__main">
+                        <a href="#" class="link-info link-info--normal">${title}</a>
+                    </div>
+                    <div class="sm-card__sub">
+                        <a href="#" class="sm-card__category sm-card__link link-info link-info--category link-info--category--small">Climate & environment</a>
+                        <a href="#" class="sm-card__link link-info link-info--small link-info--small--sm">Last update on July 21, 2020</a>
+                    </div>
+                </div>
             </div>`;
 };
 
