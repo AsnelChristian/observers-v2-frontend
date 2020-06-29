@@ -9,6 +9,26 @@ body {
   font-family: 'Frank Ruhl Libre', serif;
   font-size: 3.2rem;
   font-weight: 700;
+
+  display: block;
+
+  &--custom {
+      font-size: 4rem;
+      font-weight: 500;
+      font-style: italic;
+  }
+}
+
+.heading--colored--secondary {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: all .2s;
+  }
+  &:hover {
+    color: var(--color-grey-light);
+  }
 }
 
 .heading--secondary {

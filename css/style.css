@@ -52,7 +52,20 @@ body {
 .heading--primary {
   font-family: 'Frank Ruhl Libre', serif;
   font-size: 3.2rem;
-  font-weight: 700; }
+  font-weight: 700;
+  display: block; }
+  .heading--primary--custom {
+    font-size: 4rem;
+    font-weight: 500;
+    font-style: italic; }
+
+.heading--colored--secondary:link, .heading--colored--secondary:visited {
+  text-decoration: none;
+  color: var(--color-secondary);
+  transition: all .2s; }
+
+.heading--colored--secondary:hover {
+  color: var(--color-grey-light); }
 
 .heading--secondary {
   font-family: 'Frank Ruhl Libre', serif;
@@ -136,7 +149,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: minmax(95vh, min-content) repeat(2, min-content);
+  grid-template-rows: repeat(4, min-content);
   grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 13.7rem) [col-end]) [center-end] 1fr [full-end];
   grid-row-gap: 5rem; }
 
@@ -182,7 +195,7 @@ body {
     margin-right: 3rem; }
 
 .topics {
-  grid-row: 2/3;
+  grid-row: 2/4;
   grid-column: center-start/center-end; }
   .topics__search-bar {
     display: flex;
@@ -235,7 +248,7 @@ body {
   text-align: center; }
 
 .footer {
-  grid-row: 3/-1;
+  grid-row: 4/-1;
   grid-column: full-start/full-end;
   background-color: var(--color-black-lighter);
   padding: 5rem 5rem;
@@ -658,6 +671,42 @@ body {
     border: 1px solid var(--color-secondary);
     color: white; }
 
+.path {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .path__item {
+    display: inline-block;
+    position: relative; }
+    .path__item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: rotate(-45deg);
+      width: .55rem;
+      height: .55rem;
+      border: 1px solid transparent;
+      border-bottom-color: var(--color-grey-light);
+      border-right-color: var(--color-grey-light); }
+  .path__link {
+    padding: 0 1rem;
+    color: var(--color-grey-light);
+    text-decoration: none;
+    font-style: italic;
+    font-size: 1.4rem; }
+    .path__link:hover {
+      color: var(--color-secondary); }
+    .path__link--category {
+      font-family: 'Fjalla One', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      font-size: 1.2rem;
+      color: var(--color-primary); }
+      .path__link--category:hover {
+        color: var(--color-primary); }
+
 .search {
   position: relative; }
   .search__input {
@@ -824,3 +873,74 @@ body {
     background-color: #c8aa6a; }
   .tag:active {
     background-color: #a7863e; }
+
+.topic-view__header {
+  grid-row: 2/3;
+  grid-column: full-start/full-end;
+  background-color: var(--color-grey-lighter);
+  padding: 15rem 10rem;
+  text-align: center;
+  position: relative;
+  top: -4rem; }
+
+.topic-view__title {
+  display: block; }
+
+.topic-view__info {
+  position: relative;
+  top: -4rem;
+  grid-row: 3/4;
+  grid-column: center-start/center-end;
+  display: flex;
+  align-items: flex-start; }
+
+.topic-view__description {
+  flex-basis: 65%; }
+
+.topic-view__text {
+  position: relative;
+  padding-bottom: 1.5rem; }
+  .topic-view__text::after {
+    content: '';
+    position: absolute;
+    bottom: -.1rem;
+    left: 0;
+    height: .1rem;
+    width: 55%;
+    background-color: var(--color-grey-lighter); }
+
+.topic-view__img {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover; }
+
+.topic-view__stats {
+  flex: 1; }
+
+.topic-view__desc-info > * {
+  position: relative;
+  display: inline-block; }
+
+.topic-view__info--item-1 {
+  padding-right: 1.5rem; }
+  .topic-view__info--item-1::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: .1rem;
+    background-color: var(--color-grey-light); }
+
+.topic-view__info--item-2 {
+  padding-right: 3rem; }
+  .topic-view__info--item-2::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: .1rem;
+    background-color: var(--color-grey-light); }

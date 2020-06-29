@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-rows: minmax(95vh, min-content) repeat(2, min-content);
+  grid-template-rows: repeat(4, min-content);
   grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 13.7rem) [col-end]) [center-end] 1fr [full-end];
 
   grid-row-gap: 5rem;
