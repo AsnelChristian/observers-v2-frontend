@@ -47,17 +47,17 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. At atque eos eveniet impedit ipsam magnam minima? Aliquam cupiditate ducimus facilis harum id maiores modi possimus quasi sequi soluta suscipit, temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad dignissimos esse harum iste neque officiis optio possimus quidem rem. Aut ducimus, illum impedit laboriosam quis recusandae sapiente tempora voluptatem.<br><br>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem doloribus eaque officiis tempore totam, veritatis! Aut eos in minima natus non qui recusandae voluptatibus! Aspernatur corporis porro velit voluptatem!
             </p>
-            <div class="topic-view__desc-info margin-bottom-extra-small">
-                <span class="topic-view__info--item topic-view__info--item-1">
+            <div class="info-line margin-bottom-extra-small">
+                <span class="info-line__item info-line__item--1">
                     <a href="#" class="link-info link-info--small">August 20, 2019</a>
                 </span>
-                <span class="topic-view__info--item topic-view__info--item-2">
+                <span class="info-line__item info-line__item--2">
                     <a href="#" class="link-info link-info--small">Koblenz, Germany</a>
                 </span>
-                <span class="topic-view__info--item topic-view__info--item-2">
+                <span class="info-line__item info-line__item--2">
                     <a href="#" class="link-info link-info--category">climate & environment</a>
                 </span>
-                <span class="topic-view__info--item topic-view__info--item-4">
+                <span class="info-line__item">
                     <a href="#" class="link-info link-info--small">Written by an anonymous</a>
                 </span>
             </div>
@@ -71,36 +71,220 @@
                 <div class="tags__item"><a href="#" class="tag">Pandemic</a></div>
                 <div class="tags__item"><a href="#" class="tag">Virus</a></div>
             </div>
-
-            <div class="links">
-                <div class="tags__title">
-                    <span class="text--secondary--important">Sources</span>
-                </div>
-                <div class="links__item">
-                    <a href="#" class="links__link">
-                        <svg class="links__icon">
-                            <use xlink:href="img/sprite.svg#icon-link"></use>
-                        </svg>
-                        https://medium.com/some-articles
-                    </a>
-                </div>
-                <div class="links__item">
-                    <a href="#" class="links__link">
-                        <svg class="links__icon">
-                            <use xlink:href="img/sprite.svg#icon-link"></use>
-                        </svg>
-                        https://medium.com/some-articles
-                    </a>
-                </div>
-                <div class="links__item">
-                    <a href="#" class="links__link">
-                        <svg class="links__icon">
-                            <use xlink:href="img/sprite.svg#icon-link"></use>
-                        </svg>
-                        https://medium.com/some-articles
-                    </a>
+            <div class="topic-view__sources">
+                <div class="links margin-bottom-medium">
+                    <div class="tags__title">
+                        <span class="text--secondary--important">Sources</span>
+                    </div>
+                    <div class="links__item">
+                        <a href="#" class="links__link">
+                            <svg class="links__icon">
+                                <use xlink:href="img/sprite.svg#icon-link"></use>
+                            </svg>
+                            https://medium.com/some-articles
+                        </a>
+                    </div>
+                    <div class="links__item">
+                        <a href="#" class="links__link">
+                            <svg class="links__icon">
+                                <use xlink:href="img/sprite.svg#icon-link"></use>
+                            </svg>
+                            https://medium.com/some-articles
+                        </a>
+                    </div>
+                    <div class="links__item">
+                        <a href="#" class="links__link">
+                            <svg class="links__icon">
+                                <use xlink:href="img/sprite.svg#icon-link"></use>
+                            </svg>
+                            https://medium.com/some-articles
+                        </a>
+                    </div>
                 </div>
             </div>
+            <h3 class="topic-stats__title margin-bottom-small">What's been reported</h3>
+            <form class="topic-view__report-switch view-switch margin-bottom-extra-small" autocomplete="off">
+                <input type="radio" id="view-switch--list" class="view-switch__input view-switch--list" name="view-selector" checked>
+                <label for="view-switch--list" class="view-switch__label">
+                    <svg class="view-switch__icon">
+                        <use xlink:href="img/sprite.svg#icon-list"></use>
+                    </svg>
+                </label>
+                <input type="radio" id="view-switch--map" class="view-switch__input view-switch--map" name="view-selector">
+                <label for="view-switch--map" class="view-switch__label">
+                    <svg class="view-switch__icon">
+                        <use xlink:href="img/sprite.svg#icon-map"></use>
+                    </svg>
+                </label>
+            </form>
+            <div class="reports">
+                <div class="report">
+                    <div class="report__info info-line">
+                        <span class="info-line__item info-line__item--1">
+                            <a href="#" class="link-info link-info--small">August 20, 2019</a>
+                        </span>
+                        <span class="info-line__item info-line__item--2">
+                            <a href="#" class="link-info link-info--small">Koblenz, Germany</a>
+                        </span>
+                        <span class="info-line__item">
+                            <a href="#" class="link-info link-info--small">Written by an anonymous</a>
+                        </span>
+                    </div>
+                    <p class="report__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur earum est, fuga hic quos reiciendis. Corporis cupiditate delectus deleniti deserunt dolorem dolorum, ipsa ipsum officia pariatur quidem quisquam tenetur veritatis?</p>
+                    <div class="report__links links">
+                        <div class="tags__title">
+                            <span class="text--secondary--important">Source</span>
+                        </div>
+                        <div class="links__item">
+                            <a href="#" class="links__link">
+                                <svg class="links__icon">
+                                    <use xlink:href="img/sprite.svg#icon-link"></use>
+                                </svg>
+                                https://medium.com/some-articles
+                            </a>
+                        </div>
+                    </div>
+                    <div class="report__feel-box">
+                        <div class="report__feel">
+                            <span class="report__feel-btn report__feel-btn--active">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-up"></use></svg>
+                                2K
+                            </span>
+                            <span class="report__feel-btn">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-down"></use></svg>
+                                100
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report">
+                    <div class="report__info info-line">
+                        <span class="info-line__item info-line__item--1">
+                            <a href="#" class="link-info link-info--small">August 20, 2019</a>
+                        </span>
+                        <span class="info-line__item info-line__item--2">
+                            <a href="#" class="link-info link-info--small">Koblenz, Germany</a>
+                        </span>
+                        <span class="info-line__item">
+                            <a href="#" class="link-info link-info--small">Written by an anonymous</a>
+                        </span>
+                    </div>
+                    <p class="report__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur earum est, fuga hic quos reiciendis. Corporis cupiditate delectus deleniti deserunt dolorem dolorum, ipsa ipsum officia pariatur quidem quisquam tenetur veritatis?</p>
+                    <div class="report__feel-box">
+                        <div class="report__feel">
+                            <span class="report__feel-btn report__feel-btn--active">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-up"></use></svg>
+                                2K
+                            </span>
+                            <span class="report__feel-btn">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-down"></use></svg>
+                                100
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report">
+                    <div class="report__info info-line">
+                        <span class="info-line__item info-line__item--1">
+                            <a href="#" class="link-info link-info--small">August 20, 2019</a>
+                        </span>
+                        <span class="info-line__item info-line__item--2">
+                            <a href="#" class="link-info link-info--small">Koblenz, Germany</a>
+                        </span>
+                        <span class="info-line__item">
+                            <a href="#" class="link-info link-info--small">Written by an anonymous</a>
+                        </span>
+                    </div>
+                    <p class="report__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur earum est, fuga hic quos reiciendis. Corporis cupiditate delectus deleniti deserunt dolorem dolorum, ipsa ipsum officia pariatur quidem quisquam tenetur veritatis?</p>
+                    <div class="report__links links">
+                        <div class="tags__title">
+                            <span class="text--secondary--important">Source</span>
+                        </div>
+                        <div class="links__item">
+                            <a href="#" class="links__link">
+                                <svg class="links__icon">
+                                    <use xlink:href="img/sprite.svg#icon-link"></use>
+                                </svg>
+                                https://medium.com/some-articles
+                            </a>
+                        </div>
+                        <div class="links__item">
+                            <a href="#" class="links__link">
+                                <svg class="links__icon">
+                                    <use xlink:href="img/sprite.svg#icon-link"></use>
+                                </svg>
+                                https://medium.com/some-articles
+                            </a>
+                        </div>
+                    </div>
+                    <div class="report__feel-box">
+                        <div class="report__feel">
+                            <span class="report__feel-btn report__feel-btn--active">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-up"></use></svg>
+                                2K
+                            </span>
+                            <span class="report__feel-btn">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-down"></use></svg>
+                                100
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report">
+                    <div class="report__info info-line">
+                        <span class="info-line__item info-line__item--1">
+                            <a href="#" class="link-info link-info--small">August 20, 2019</a>
+                        </span>
+                        <span class="info-line__item info-line__item--2">
+                            <a href="#" class="link-info link-info--small">Koblenz, Germany</a>
+                        </span>
+                        <span class="info-line__item">
+                            <a href="#" class="link-info link-info--small">Written by an anonymous</a>
+                        </span>
+                    </div>
+                    <p class="report__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur earum est, fuga hic quos reiciendis. Corporis cupiditate delectus deleniti deserunt dolorem dolorum, ipsa ipsum officia pariatur quidem quisquam tenetur veritatis?</p>
+                    <div class="report__feel-box">
+                        <div class="report__feel">
+                            <span class="report__feel-btn report__feel-btn--active">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-up"></use></svg>
+                                2K
+                            </span>
+                            <span class="report__feel-btn">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-down"></use></svg>
+                                100
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report">
+                    <div class="report__info info-line">
+                        <span class="info-line__item info-line__item--1">
+                            <a href="#" class="link-info link-info--small">August 20, 2019</a>
+                        </span>
+                        <span class="info-line__item info-line__item--2">
+                            <a href="#" class="link-info link-info--small">Koblenz, Germany</a>
+                        </span>
+                        <span class="info-line__item">
+                            <a href="#" class="link-info link-info--small">Written by an anonymous</a>
+                        </span>
+                    </div>
+                    <p class="report__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur earum est, fuga hic quos reiciendis. Corporis cupiditate delectus deleniti deserunt dolorem dolorum, ipsa ipsum officia pariatur quidem quisquam tenetur veritatis?</p>
+                    <div class="report__feel-box">
+                        <div class="report__feel">
+                            <span class="report__feel-btn report__feel-btn--active">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-up"></use></svg>
+                                2K
+                            </span>
+                            <span class="report__feel-btn">
+                                <svg class="report__icon"><use xlink:href="img/sprite.svg#icon-thumbs-down"></use></svg>
+                                100
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
         <div class="topic-view__stats"></div>
     </section>

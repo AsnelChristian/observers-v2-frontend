@@ -29,6 +29,9 @@
 
   &__description {
     flex-basis: 65%;
+
+    display: flex;
+    flex-direction: column;
   }
   &__text {
     position: relative;
@@ -50,40 +53,14 @@
     object-fit: cover;
   }
 
+  &__sources {
+    font-size: 1.5rem;
+  }
   &__stats {
     flex: 1;
   }
 
-  &__desc-info {
-    & > * {
-      position: relative;
-      display: inline-block;
-    }
-  }
-  &__info--item-1 {
-    padding-right: 1.5rem;
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1rem;
-      height: .1rem;
-      background-color: var(--color-grey-light);
-    }
-  }
-  &__info--item-2 {
-    padding-right: 3rem;
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 2rem;
-      height: .1rem;
-      background-color: var(--color-grey-light);
-    }
+  &__report-switch {
+    align-self: flex-end;
   }
 }
