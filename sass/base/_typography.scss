@@ -112,3 +112,24 @@ body {
      }
   }
 }
+
+.text--secondary--important {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: .1rem;
+  padding-bottom: .5rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: .1rem;
+    width: 120%;
+    background-color: var(--color-secondary);
+  }
+}
