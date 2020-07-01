@@ -8,6 +8,9 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
     <script src="https://unpkg.com/supercluster@6.0.2/dist/supercluster.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts-en.common.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts-en.min.js"></script>
+
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
 
     <link rel="stylesheet"  href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic|Frank+Ruhl+Libre:400,500,700|Fjalla+One:400" type="text/css" media="all">
@@ -117,7 +120,7 @@
                     </svg>
                 </label>
             </form>
-            <div class="reports">
+            <div class="reports margin-bottom-small">
                 <div class="report">
                     <div class="report__info info-line">
                         <span class="info-line__item info-line__item--1">
@@ -281,16 +284,32 @@
                             </span>
                         </div>
                     </div>
-
                 </div>
             </div>
+            <ul class="reports__pagination pagination">
+                <li class="pagination__item"><a href="#"> &laquo; </a></li>
+                <li class="pagination__item"><a href="#"> 1 </a></li>
+                <li class="pagination__item"><a href="#"> 2 </a></li>
+                <li class="pagination__item--active pagination__item"><a href="#"> 3 </a></li>
+                <li class="pagination__item"><a href="#"> 4 </a></li>
+                <li class="pagination__item"><a href="#"> 5 </a></li>
+                <li class="pagination__item"><a href="#"> 6 </a></li>
+                <li class="pagination__item"><a href="#"> 7 </a></li>
+                <li class="pagination__item"><a href="#"> 8 </a></li>
+                <li class="pagination__item"><a href="#"> &raquo; </a></li>
+            </ul>
 
         </div>
-        <div class="topic-view__stats"></div>
+        <div class="topic-view__stats">
+            <h3 class="topic-stats__title margin-bottom-small">Statistics</h3>
+            <div class="sentiment-pie margin-bottom-medium" id="sentiment-pie"></div>
+            <div class="report-freq" id="report-freq"></div>
+        </div>
     </section>
 
     <footer class="footer">
         <p class="footer__copyright">&copy; All rights reserved theobservers.org</p>
     </footer>
+    <script src="js/topics.js"></script>
 </body>
 </html>

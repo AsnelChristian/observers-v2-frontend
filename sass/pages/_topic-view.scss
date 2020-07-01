@@ -3,9 +3,9 @@
   &__header {
     grid-row: 2/3;
     grid-column: full-start/full-end;
-    background-color: var(--color-grey-lighter);
+    background-color: rgba(122, 122, 122, .1);
 
-    padding: 15rem 10rem;
+    padding: 8rem 10rem;
     text-align: center;
 
     position: relative;
@@ -58,9 +58,27 @@
   }
   &__stats {
     flex: 1;
+
+    margin-left: 4rem;
   }
 
   &__report-switch {
     align-self: flex-end;
   }
+}
+
+.report-freq,
+.sentiment-pie {
+  width: 100%;
+  height: 28rem;
+  box-shadow: $box-shadow-subtle;
+  padding: 1rem .5rem;
+}
+
+.report-freq {
+  height: 30rem;
+}
+
+.reports__pagination {
+  align-self: flex-end;
 }
