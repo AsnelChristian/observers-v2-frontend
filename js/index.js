@@ -4,6 +4,14 @@ const topicsList = document.querySelector('.topic-cards');
 const topicsMap = document.querySelector('.topic-map');
 const topicsPagination = document.querySelector('.pagination');
 
+const clusterListClose = document.querySelector('.topic-map__cluster-list--close');
+const clusterListContainer = document.querySelector('.topic-map__cluster-list');
+const clusterList = document.querySelector('.topic-map__cluster-list--elements');
+
+clusterListClose.addEventListener('click', function() {
+    clusterListContainer.classList.add('hide');
+});
+
 topicsListViewToggle.addEventListener('click', e => {
     topicsMap.classList.add('hide');
     topicsList.classList.remove('hide');
@@ -2319,10 +2327,15 @@ const update = zoom => {
             el.innerHTML = `<span>${cluster.properties.point_count_abbreviated}</span>`;
 
             const expansionZoom = index.getClusterExpansionZoom(cluster.properties.cluster_id);
-            if ((expansionZoom === map.getMaxZoom()) || (zoomLevel >= index.options.maxZoom) ) {
+            if ((zoomLevel >= index.options.maxZoom) ) {
                 const leaves = index.getChildren(cluster.properties.cluster_id);
                 leaves.forEach(leave => {popupHtml = `${popupHtml}${getPopupHTML(leave.title)}`});
-                addPopup(marker, popupHtml, 'topic-popup');
+
+                el.removeEventListener('click', function(){});
+                el.addEventListener('click', function() {
+                    clusterList.innerHTML = popupHtml;
+                    clusterListContainer.classList.remove('hide');
+                })
             } else {
                 el.addEventListener('click', function (e) {
                     flyTo(cluster.geometry.coordinates, expansionZoom);
@@ -2352,16 +2365,21 @@ const addPopup = (marker, popupHtml, className) => {
 let ready = false;
 
 map.on('load',  () => {
+    ready = false;
     update(12);
     ready = true;
 });
 
 map.on('moveend', async () => {
     if (!ready) return;
+    ready = false;
     update();
+    ready = true;
 });
 
 const flyTo = (center, zoom) => {
     if (!ready) return;
+    ready = false;
     map.flyTo({center, zoom});
+    ready = true;
 };

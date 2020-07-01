@@ -242,6 +242,31 @@ body {
   height: 50rem;
   animation: fadeInBottom 2s;
   position: relative; }
+  .topic-map__cluster-list {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: calc(100% - 1px);
+    width: 47%;
+    background-color: var(--color-white);
+    box-shadow: 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.14), 0 0.2rem 0.1rem -0.1rem rgba(0, 0, 0, 0.12), 0 0.1rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    animation: fadeInBottom 2s;
+    overflow-y: scroll; }
+    .topic-map__cluster-list--close {
+      z-index: 250;
+      position: absolute;
+      top: .7rem;
+      right: 1.5rem;
+      font-size: 3rem;
+      color: var(--color-secondary);
+      transition: all .2s;
+      cursor: pointer; }
+      .topic-map__cluster-list--close:hover {
+        color: var(--color-primary); }
+    .topic-map__cluster-list--elements {
+      margin-top: 2rem;
+      padding: 1rem; }
 
 .topic-stats {
   animation: fadeInRight 3s;
