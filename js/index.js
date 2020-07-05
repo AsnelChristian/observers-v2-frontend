@@ -2383,3 +2383,34 @@ const flyTo = (center, zoom) => {
     map.flyTo({center, zoom});
     ready = true;
 };
+
+
+const toolbarOptions = [
+    [{ 'header': [3, 4, false] }],
+
+    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    ['link', 'blockquote'],
+
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+
+    ['clean']                                         // remove formatting button
+];
+
+const editor = new Quill('.editor', {
+    modules: {
+        toolbar: toolbarOptions
+    },
+    theme: 'snow'
+});
+
+const createTopicButton = document.querySelector('.add-topic__btn');
+const createTopicForm = document.querySelector('.create-topic-form');
+const createTopicClose = document.querySelector('.create-topic-close');
+
+createTopicButton.addEventListener('click', function() {
+    createTopicForm.classList.remove('hide');
+});
+
+createTopicClose.addEventListener('click', function(){
+    createTopicForm.classList.add('hide');
+});
