@@ -602,7 +602,6 @@ body {
       left: 5%;
       width: 90%;
       height: .1rem;
-      transform: translateX(-50%);
       background-color: #1d1d1d; }
   .option__radio:checked + .option__label, .option__label:hover {
     background-color: white;
