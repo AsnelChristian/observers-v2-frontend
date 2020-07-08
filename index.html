@@ -53,6 +53,7 @@
             <div class="full-container create-topic-form hide">
                 <div class="form-container">
                     <span class="create-topic-close form-container__close close"></span>
+                    <h3 class="topic-stats__title margin-bottom-small">Create a new topic</h3>
                     <form action="#" class="form form--create-topic">
                         <div class="form__editor editor"></div>
                     </form>
@@ -111,33 +112,67 @@
                     </form>
                 </div>
                 <div class="topics__search-bar--filters">
-                    <div class="dropdown categories-dropdown">
-                        <span class="dropdown__text categories-dropdown__text">Categories
-                            <svg class="dropdown__icon">
-                                <use xlink:href="img/sprite.svg#icon-chevron-thin-down"></use>
-                            </svg>
-                        </span>
-                        <ul class="dropdown__menu dropdown__menu--left categories-dropdown__menu">
-                            <li class="dropdown__item"><a href="#"><span>Politics</span></a></li>
-                            <li class="dropdown__item"><a href="#"><span>Economy</span></a></li>
-                            <li class="dropdown__item"><a href="#"><span>Education</span></a></li>
-                            <li class="dropdown__item"><a href="#"><span>Science</span></a></li>
-                            <li class="dropdown__item"><a href="#"><span>Climate & Environment</span></a></li>
-                            <li class="dropdown__item"><a href="#"><span>Law</span></a></li>
-                        </ul>
+                    <div class="select-group select-group--1 multi-select" data-select="categories">
+                        <div class="select-container">
+                            <div class="selected">
+                                Select category
+                            </div>
+                            <div class="select-box">
+                                <div class="option-container">
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" value="Politics" id="politics" name="category">
+                                        <label class="option__label option__label--active" for="politics">Politics</label>
+                                    </div>
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" id="Health" value="Health" name="category">
+                                        <label class="option__label" for="Health">Health</label>
+                                    </div>
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" value="Climate & environment" id="climate-environment" name="category">
+                                        <label class="option__label" for="climate-environment">Climate & environment</label>
+                                    </div>
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" value="Science" id="science" name="category">
+                                        <label class="option__label" for="science">Science</label>
+                                    </div>
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" value="technology" id="technology" name="category">
+                                        <label class="option__label" for="technology">technology</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="dropdown tags-dropdown">
-                        <span class="dropdown__text tags-dropdown__text">Tags
-                            <svg class="dropdown__icon">
-                                <use xlink:href="img/sprite.svg#icon-chevron-thin-down"></use>
-                            </svg>
-                        </span>
-                        <ul class="dropdown__menu dropdown__menu--right tags-dropdown__menu">
-                            <li class="dropdown__item"><a href="#"><span>Covid-19</span></a></li>
-                            <li class="dropdown__item"><a href="#"><span>Black lives matter</span></a></li>
-                            <li class="dropdown__item"><a href="#"><span>Corruption</span></a></li>
-                            <li class="dropdown__item"><a href="#"><span>5G</span></a></li>
-                        </ul>
+                    <div class="select-group select-group--2 multi-select" data-select="tags">
+                        <div class="select-container">
+                            <div class="selected">
+                                Select tags
+                            </div>
+                            <div class="select-box">
+                                <div class="option-container">
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" id="covid-19" value="Covid-19" name="tags">
+                                        <label class="option__label option__label--active" for="covid-19">Covid-19 outbreak</label>
+                                    </div>
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" id="novel" value="Novel" name="tags">
+                                        <label class="option__label" for="novel">Novel</label>
+                                    </div>
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" id="travels" value="Travels" name="tags">
+                                        <label class="option__label" for="travels">Travels</label>
+                                    </div>
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" id="Funny" value="Funny" name="tags">
+                                        <label class="option__label" for="Funny">Funny</label>
+                                    </div>
+                                    <div class="option">
+                                        <input class="option__radio" type="checkbox" id="black-lives-matter" value="Blakc lives matter" name="tags">
+                                        <label class="option__label" for="black-lives-matter">Black lives matter</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -34,6 +34,52 @@ topicsMapViewToggle.addEventListener('click', e => {
     });
 });
 
+const selectGroups = document.querySelectorAll(".select-group");
+
+document.onclick = function(e){
+    if(!e.target.classList.contains('option-container') &&
+        !e.target.classList.contains('option__label') &&
+        !e.target.classList.contains('option__radio') &&
+        !e.target.classList.contains('selected')){
+        const options = document.querySelectorAll(".option-container");
+        options.forEach(el => {
+            el.classList.remove('option-container--active');
+        });
+    }
+};
+selectGroups.forEach((g) => {
+    const selected = g.querySelector(".selected");
+    const optionListContainer = g.querySelector(".option-container");
+    const optionList = optionListContainer.querySelectorAll("input");
+
+    let selectedOptions =  new Set();
+
+
+    selected.addEventListener("click", () => {
+        // Close all other select list
+        const selects = document.querySelectorAll(".option-container");
+        selects.forEach(el => {
+            el.classList.remove('option-container--active');
+        });
+        optionListContainer.classList.add("option-container--active");
+    });
+
+    optionList.forEach((o) => {
+        o.addEventListener("click", () => {
+            if (!g.classList.contains('multi-select')) {
+                selectedOptions = new Set();
+            }
+            if (o.checked) {
+                selectedOptions.add(o.value);
+            } else {
+                selectedOptions.delete(o.value);
+            }
+
+            selected.innerHTML = `(${Array.from(selectedOptions).length}) ${g.getAttribute('data-select')}`;
+        });
+    });
+});
+
 
 const sampleData = [
     {
