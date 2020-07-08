@@ -14,9 +14,10 @@
       margin-left: 4rem;
       display: flex;
       justify-content: space-between;
-      & > * {
-        flex: 1;
-      }
+      align-items: flex-end;
+      //& > * {
+      //  flex: 1;
+      //}
     }
   }
   &__search-box {
