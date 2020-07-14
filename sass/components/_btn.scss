@@ -2,6 +2,8 @@
   &,
   &:link,
   &:visited {
+    border: none;
+    outline: none;
     cursor: pointer;
     font-size: $default-font-size;
     text-decoration: none;
@@ -11,6 +13,9 @@
     text-transform: uppercase;
     padding: 1rem 2.5rem;
     letter-spacing: .1rem;
+  }
+  &:active {
+    outline: none;
   }
 
   &--small {
@@ -105,5 +110,19 @@
   &:hover,
   &:active {
     background-color: var(--color-secondary);
+  }
+}
+
+.btn-primary {
+  &,
+  &:link,
+  &:visited {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    transition: all .2s ease;
+  }
+  &:hover,
+  &:active {
+    background-color: darken($color-primary, 10%);
   }
 }

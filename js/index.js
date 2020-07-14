@@ -2470,9 +2470,10 @@ const selectTagsCreateTopicForm = new Choices('#select-tags-create-topic-form', 
     editItems: true,
     duplicateItemsAllowed: false,
     maxItemCount: 5,
+    placeholderValue: "Enter tags",
     removeItemButton: true,
     maxItemText: function(maxItemCount) {
-        return String(maxItemCount) + "Tags can be defined at most";
+        return String(maxItemCount) + " tags can be defined at most";
     },
     uniqueItemText: 'This is tag has already been added',
 });

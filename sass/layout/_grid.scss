@@ -30,6 +30,8 @@
   background-color: var(--color-white);
   box-shadow: $box-shadow-w;
 
+  overflow-y: scroll;
+
   &__close {
     display: block;
     position: fixed;
