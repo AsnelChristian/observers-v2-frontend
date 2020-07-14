@@ -34,6 +34,19 @@ topicsMapViewToggle.addEventListener('click', e => {
     });
 });
 
+const createTopicButton = document.querySelector('.add-topic__btn');
+const createTopicForm = document.querySelector('.create-topic-form');
+const createTopicClose = document.querySelector('.create-topic-close');
+
+createTopicButton.addEventListener('click', function() {
+    createTopicForm.classList.remove('hide');
+});
+
+createTopicClose.addEventListener('click', function(){
+    createTopicForm.classList.add('hide');
+});
+
+
 const selectGroups = document.querySelectorAll(".select-group");
 
 document.onclick = function(e){
@@ -2450,17 +2463,6 @@ const editor = new Quill('.editor', {
     placeholder: 'Describe your topic in details...'
 });
 
-const createTopicButton = document.querySelector('.add-topic__btn');
-const createTopicForm = document.querySelector('.create-topic-form');
-const createTopicClose = document.querySelector('.create-topic-close');
-
-createTopicButton.addEventListener('click', function() {
-    createTopicForm.classList.remove('hide');
-});
-
-createTopicClose.addEventListener('click', function(){
-    createTopicForm.classList.add('hide');
-});
 
 const selectCategoryCreateTopicForm = new Choices('#select-category-create-topic-form');
 const selectTagsCreateTopicForm = new Choices('#select-tags-create-topic-form', {

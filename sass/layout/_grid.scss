@@ -5,3 +5,59 @@
 
   grid-row-gap: 5rem;
 }
+
+.full-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(1);
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 1000;
+  transform-origin: right;
+  animation: growInRight 1s;
+}
+
+.form-container {
+  padding: 4rem 3rem 1rem;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateX(-100%);
+  width: 50%;
+  height: 100%;
+  background-color: var(--color-white);
+  box-shadow: $box-shadow-w;
+
+  &__close {
+    display: block;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transform-origin: center;
+    transition: all .2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: .2rem;
+      background-color: var(--color-black-lighter);
+      transform: rotate(45deg);
+      transform-origin: center;
+    }
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+}
