@@ -2446,7 +2446,8 @@ const editor = new Quill('.editor', {
     modules: {
         toolbar: toolbarOptions
     },
-    theme: 'snow'
+    theme: 'snow',
+    placeholder: 'Describe your topic in details...'
 });
 
 const createTopicButton = document.querySelector('.add-topic__btn');
@@ -2459,4 +2460,17 @@ createTopicButton.addEventListener('click', function() {
 
 createTopicClose.addEventListener('click', function(){
     createTopicForm.classList.add('hide');
+});
+
+const selectCategoryCreateTopicForm = new Choices('#select-category-create-topic-form');
+const selectTagsCreateTopicForm = new Choices('#select-tags-create-topic-form', {
+    delimiter: ',',
+    editItems: true,
+    duplicateItemsAllowed: false,
+    maxItemCount: 5,
+    removeItemButton: true,
+    maxItemText: function(maxItemCount) {
+        return String(maxItemCount) + "Tags can be defined at most";
+    },
+    uniqueItemText: 'This is tag has already been added',
 });

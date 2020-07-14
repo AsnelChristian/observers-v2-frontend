@@ -142,7 +142,64 @@
 }
 
 .form {
+  &__group {
+    position: relative;
+    padding: 1.5rem 0;
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
 
+    &--small {
+      width: 50%;
+    }
+  }
+  &__input {
+    width: 100%;
+    font-family: inherit;
+    border: none;
+    border-bottom: 2px solid var(--color-black);
+    padding: .8rem 0;
+    font-size: 1.5rem;
+    background-color: var(--color-white);
+    transition: all .2s;
+
+    &::placeholder {
+      color: transparent;
+    }
+    &:focus {
+      border-bottom: 2px solid var(--color-secondary);
+      outline: none;
+    }
+    &:required,
+    &:invalid {
+      border-bottom: 2px solid var(--color-primary);
+    }
+  }
+  &__label {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    font-size: 1.4rem;
+    color: var(--color-grey-light);
+    transition: all .2s;
+
+    &--title {
+      font-size: 1.6rem;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    &--select {
+      position: relative;
+      margin-bottom: .5rem;
+    }
+  }
+  &__input:placeholder-shown + &__label {
+    font-size: 1.5rem;
+    cursor: text;
+    top: 2rem;
+  }
   &__editor {
     height: 15rem;
   }

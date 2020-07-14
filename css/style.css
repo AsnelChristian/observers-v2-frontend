@@ -43,6 +43,21 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; }
 
+.simplebar-content-wrapper {
+  overflow: auto; }
+
+.simplebar-scrollbar::before {
+  background-color: #957737;
+  border-radius: 0; }
+
+.simplebar-track {
+  background-color: white;
+  margin-right: .2rem; }
+
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: .8rem; }
+
 body {
   font-family: 'PT serif', serif;
   font-weight: 400;
@@ -281,7 +296,7 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--color-black); }
+    border-bottom: 3px solid var(--color-black); }
   .topic-stats__list {
     list-style: none; }
 
@@ -303,6 +318,7 @@ body {
   z-index: 1000; }
 
 .form-container {
+  overflow-y: scroll;
   padding: 4rem 3rem 1rem;
   position: absolute;
   top: 0;
@@ -554,6 +570,77 @@ body {
     margin-right: .5rem; }
   .report__feel-btn--active .report__icon {
     fill: var(--color-secondary); }
+
+.choices__inner {
+  border: 2px solid transparent;
+  border-bottom-color: var(--color-black);
+  padding-left: 0;
+  padding-right: 0; }
+
+.is-focused .choices__inner,
+.is-open .choices__inner {
+  border-color: transparent;
+  border-bottom-color: var(--color-secondary);
+  color: var(--color-secondary); }
+
+.choices__list.choices__list--single {
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  font-family: 'Fjalla One', serif;
+  letter-spacing: .1rem; }
+
+.choices__list--multiple > .choices__item {
+  border-radius: 0;
+  font-size: inherit;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-secondary); }
+
+.choices[data-type*="select-multiple"] .choices__button,
+.choices[data-type*="text"] .choices__button {
+  border-left: 1px solid white; }
+
+.choices__list--dropdown .choices__list {
+  display: block;
+  color: white; }
+
+.choices__list--dropdown .choices__item--selectable {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-black);
+  padding: 10px 2px;
+  position: relative;
+  transition: all .3s ease-out; }
+  .choices__list--dropdown .choices__item--selectable::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: .1rem;
+    background-color: #1d1d1d; }
+  .choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: white;
+    color: #ba9545;
+    border: 1px solid #ba9545; }
+    .choices__list--dropdown .choices__item--selectable.is-highlighted::before {
+      background-color: #ba9545; }
+
+.choices__list {
+  border-radius: 0; }
+  .choices__list--dropdown {
+    border: 1px solid transparent; }
+
+.choices__inner {
+  background-color: white;
+  border-radius: 0;
+  font-size: inherit; }
+
+.choices__input {
+  width: 0;
+  background-color: white; }
+
+.choices__item.choices__item--choice.has-no-results {
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary); }
 
 .selected {
   cursor: pointer;
@@ -1049,6 +1136,52 @@ body {
     background-color: var(--color-black); }
     .view-switch__input:checked + .view-switch__label__icon {
       fill: var(--color-white); }
+
+.form__group {
+  position: relative;
+  padding: 1.5rem 0; }
+  .form__group:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .form__group--small {
+    width: 50%; }
+
+.form__input {
+  width: 100%;
+  font-family: inherit;
+  border: none;
+  border-bottom: 2px solid var(--color-black);
+  padding: .8rem 0;
+  font-size: 1.5rem;
+  background-color: var(--color-white);
+  transition: all .2s; }
+  .form__input::placeholder {
+    color: transparent; }
+  .form__input:focus {
+    border-bottom: 2px solid var(--color-secondary);
+    outline: none; }
+  .form__input:required, .form__input:invalid {
+    border-bottom: 2px solid var(--color-primary); }
+
+.form__label {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  font-size: 1.4rem;
+  color: var(--color-grey-light);
+  transition: all .2s; }
+  .form__label--title {
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-bottom: 1.5rem; }
+  .form__label--select {
+    position: relative;
+    margin-bottom: .5rem; }
+
+.form__input:placeholder-shown + .form__label {
+  font-size: 1.5rem;
+  cursor: text;
+  top: 2rem; }
 
 .form__editor {
   height: 15rem; }
