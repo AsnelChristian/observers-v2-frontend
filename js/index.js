@@ -34,7 +34,7 @@ topicsMapViewToggle.addEventListener('click', e => {
     });
 });
 
-const createTopicButton = document.querySelector('.add-topic__btn');
+const createTopicButton = document.querySelector('#add-topic__btn');
 const createTopicForm = document.querySelector('.create-topic-form');
 const createTopicClose = document.querySelector('.create-topic-close');
 

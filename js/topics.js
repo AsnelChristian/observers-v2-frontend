@@ -165,3 +165,53 @@ reportChartoption = {
 
 reportChart = echarts.init(document.querySelector('.report-freq'));
 reportChart.setOption(reportChartoption);
+
+
+// Todo: Refactor js code
+
+const toolbarOptions = [
+    [{ 'header': [3, 4, false] }],
+
+    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    ['link', 'blockquote'],
+
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+
+    ['clean']                                         // remove formatting button
+];
+
+const editor = new Quill('.editor', {
+    modules: {
+        toolbar: toolbarOptions
+    },
+    theme: 'snow',
+    placeholder: 'Describe your topic in details...'
+});
+
+
+
+const createTopicButton = document.querySelector('#add-topic__btn');
+const createTopicForm = document.querySelector('.create-topic-form');
+const createTopicClose = document.querySelector('.create-topic-close');
+
+createTopicButton.addEventListener('click', function() {
+    createTopicForm.classList.remove('hide');
+});
+
+createTopicClose.addEventListener('click', function(){
+    createTopicForm.classList.add('hide');
+});
+
+const selectCategoryCreateTopicForm = new Choices('#select-category-create-topic-form');
+const selectTagsCreateTopicForm = new Choices('#select-tags-create-topic-form', {
+    delimiter: ',',
+    editItems: true,
+    duplicateItemsAllowed: false,
+    maxItemCount: 5,
+    placeholderValue: "Enter tags",
+    removeItemButton: true,
+    maxItemText: function(maxItemCount) {
+        return String(maxItemCount) + " tags can be defined at most";
+    },
+    uniqueItemText: 'This is tag has already been added',
+});
