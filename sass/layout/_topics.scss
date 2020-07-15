@@ -83,17 +83,6 @@
   margin-left: 4rem;
   flex: 1;
 
-  &__title {
-    font-family: 'Fjalla One', serif;
-    font-size: 1.7rem;
-    letter-spacing: .2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-
-    padding-bottom: 1.5rem;
-    border-bottom: 3px solid var(--color-black);
-  }
-
   &__list {
     list-style: none;
   }

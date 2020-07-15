@@ -202,6 +202,21 @@ createTopicClose.addEventListener('click', function(){
     createTopicForm.classList.add('hide');
 });
 
+
+const createReportButton = document.querySelector('#add-report__btn');
+const createReportForm = document.querySelector('.create-report-form');
+const createReportClose = document.querySelector('.create-report-close');
+
+createReportButton.addEventListener('click', function() {
+    createReportForm.classList.remove('hide');
+});
+
+createReportClose.addEventListener('click', function(){
+    createReportForm.classList.add('hide');
+});
+
+
+
 const selectCategoryCreateTopicForm = new Choices('#select-category-create-topic-form');
 const selectTagsCreateTopicForm = new Choices('#select-tags-create-topic-form', {
     delimiter: ',',

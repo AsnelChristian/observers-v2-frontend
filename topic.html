@@ -40,10 +40,27 @@
         </ul>
     </section>
     <section class="topic-view__info">
+
+        <div class="full-container create-report-form hide" >
+            <div class="form-container" data-simplebar data-simplebar-auto-hide="false">
+                <span class="create-report-close form-container__close close"></span>
+                <h3 class="section__title margin-bottom-small">Report on this topic</h3>
+                <form action="#" class="form form--create-topic">
+                    <div class="form__group">
+                        <label for="reportContent" class="form__label form__label--title margin-bottom-small">Report's content</label>
+                        <textarea rows=8 class="form__textarea" id="reportContent" placeholder="Share your opinion on this topic..."> </textarea>
+                    </div>
+                    <div class="form__group form__group--split">
+                        <input type="Reset" value="Reset Form" class="btn btn--small btn-primary">
+                        <input type="submit" value="Submit your report" class="btn btn--small btn-black">
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="full-container create-topic-form hide" >
             <div class="form-container" data-simplebar data-simplebar-auto-hide="false">
                 <span class="create-topic-close form-container__close close"></span>
-                <h3 class="topic-stats__title margin-bottom-small">Create a new topic</h3>
+                <h3 class="section__title margin-bottom-small">Create a new topic</h3>
                 <form action="#" class="form form--create-topic">
                     <div class="form__group form__group--small">
                         <label class="form__label form__label--select" for="select-category-create-topic-form">Topic's category</label>
@@ -139,7 +156,7 @@
                     </div>
                 </div>
             </div>
-            <h3 class="topic-stats__title margin-bottom-small">What's been reported</h3>
+            <h3 class="section__title margin-bottom-small">What's been reported</h3>
             <form class="topic-view__report-switch view-switch margin-bottom-extra-small" autocomplete="off">
                 <input type="radio" id="view-switch--list" class="view-switch__input view-switch--list" name="view-selector" checked>
                 <label for="view-switch--list" class="view-switch__label">
@@ -335,12 +352,12 @@
 
         </div>
         <div class="topic-view__stats">
-            <h3 class="topic-stats__title margin-bottom-small">Statistics</h3>
+            <h3 class="section__title margin-bottom-small">Statistics</h3>
             <div class="sentiment-pie margin-bottom-medium" id="sentiment-pie"></div>
             <div class="report-freq margin-bottom-medium" id="report-freq"></div>
 
             <div class="full-width margin-bottom-medium">
-                <div class="full-width__btn btn btn-primary">
+                <div class="full-width__btn btn btn-primary" id="add-report__btn">
                     <svg class="btn__icon">
                         <use xlink:href="img/sprite.svg#icon-quill"></use>
                     </svg>

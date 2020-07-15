@@ -164,6 +164,15 @@ body {
     width: 120%;
     background-color: var(--color-secondary); }
 
+.section__title {
+  font-family: 'Fjalla One', serif;
+  font-size: 1.7rem;
+  letter-spacing: .2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid var(--color-black); }
+
 .text-italics {
   font-style: italic !important; }
 
@@ -348,14 +357,6 @@ body {
   animation: fadeInRight 3s;
   margin-left: 4rem;
   flex: 1; }
-  .topic-stats__title {
-    font-family: 'Fjalla One', serif;
-    font-size: 1.7rem;
-    letter-spacing: .2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    padding-bottom: 1.5rem;
-    border-bottom: 3px solid var(--color-black); }
   .topic-stats__list {
     list-style: none; }
 
@@ -1175,22 +1176,33 @@ body {
     justify-content: space-between;
     align-items: center; }
 
-.form__input {
+.form__input, .form__textarea {
   width: 100%;
   font-family: inherit;
-  border: none;
-  border-bottom: 2px solid var(--color-black);
+  border: 2px solid transparent;
+  border-bottom-color: var(--color-black);
   padding: .8rem 0;
   font-size: 1.5rem;
-  background-color: var(--color-white);
   transition: all .2s; }
+  .form__input:focus, .form__textarea:focus {
+    border-bottom-color: var(--color-secondary);
+    outline: none; }
+  .form__input:required, .form__input:invalid, .form__textarea:required, .form__textarea:invalid {
+    border-bottom-color: var(---color-primary); }
+
+.form__input {
+  background-color: var(--color-white); }
   .form__input::placeholder {
     color: transparent; }
-  .form__input:focus {
-    border-bottom: 2px solid var(--color-secondary);
-    outline: none; }
-  .form__input:required, .form__input:invalid {
-    border-bottom: 2px solid var(--color-primary); }
+
+.form__textarea {
+  margin-top: 2rem;
+  padding: 1rem 1rem;
+  background-color: var(--color-grey-extra-light);
+  color: var(--color-black-lighter); }
+  .form__textarea::placeholder {
+    color: var(--color-grey-light);
+    font-style: italic; }
 
 .form__label {
   position: absolute;
