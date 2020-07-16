@@ -46,9 +46,13 @@
                 <span class="create-report-close form-container__close close"></span>
                 <h3 class="section__title margin-bottom-small">Report on this topic</h3>
                 <form action="#" class="form form--create-topic">
-                    <div class="form__group">
+                    <div class="form__group margin-bottom-medium">
                         <label for="reportContent" class="form__label form__label--title margin-bottom-small">Report's content</label>
                         <textarea rows=8 class="form__textarea" id="reportContent" placeholder="Share your opinion on this topic..."> </textarea>
+                    </div>
+                    <div class="form__group form-control--links">
+                        <input class="form-control form__input" id="select-mediaUrls-create-report-form" type="text" value="" placeholder="Enter something" />
+                        <label class="form__label" for="select-mediaUrls-create-report-form">Report's supporting links or sources</label>
                     </div>
                     <div class="form__group form__group--split">
                         <input type="Reset" value="Reset Form" class="btn btn--small btn-primary">
@@ -62,8 +66,12 @@
                 <span class="create-topic-close form-container__close close"></span>
                 <h3 class="section__title margin-bottom-small">Create a new topic</h3>
                 <form action="#" class="form form--create-topic">
+                    <div class="form__group">
+                        <input type="text" class="form__input" id="title" placeholder="Title">
+                        <label for="title" class="form__label">Topic's title</label>
+                    </div>
                     <div class="form__group form__group--small">
-                        <label class="form__label form__label--select" for="select-category-create-topic-form">Topic's category</label>
+                        <label class="form__label--title" for="select-category-create-topic-form">Topic's category</label>
                         <select class="form-control" data-trigger name="choices-single-default" id="select-category-create-topic-form" placeholder="Search category">
                             <option value="">Select category</option>
                             <option value="Politics"># Politics</option>
@@ -74,10 +82,6 @@
                         </select>
                     </div>
                     <div class="form__group">
-                        <input type="text" class="form__input" id="title" placeholder="Title">
-                        <label for="title" class="form__label">Topic's title</label>
-                    </div>
-                    <div class="form__group">
                         <label class="form__label--title" for="topicDescription">Topic's description</label>
                         <input name="description" id="topicDescription" type="hidden">
                         <div class="form__editor editor"></div>
@@ -85,6 +89,10 @@
                     <div class="form__group">
                         <input class="form-control form__input" id="select-tags-create-topic-form" type="text" value="" placeholder="Enter something" />
                         <label class="form__label" for="select-tags-create-topic-form">Topic's tags</label>
+                    </div>
+                    <div class="form__group form-control--links">
+                        <input class="form-control form__input" id="select-mediaUrls-create-topic-form" type="text" value="" placeholder="Enter something" />
+                        <label class="form__label" for="select-mediaUrls-create-topic-form">Topic's supporting links</label>
                     </div>
                     <div class="form__group form__group--split">
                         <input type="Reset" value="Reset Form" class="btn btn--small btn-primary">

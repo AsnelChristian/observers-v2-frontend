@@ -25,6 +25,15 @@
   border: 1px solid var(--color-secondary);
 }
 
+.form-control--links {
+  .choices__list--multiple > .choices__item {
+    border-radius: 10rem;
+    font-size: inherit;
+    background-color: lighten($color-secondary, 10%);
+    border: 1px solid var(--color-secondary);
+  }
+}
+
 .choices[data-type*="select-multiple"] .choices__button,
 .choices[data-type*="text"] .choices__button {
   border-left: 1px solid white;
@@ -78,6 +87,9 @@
 .choices__input {
   width: 0;
   background-color: white;
+  font-family: inherit;
+  font-style: italic;
+  color: var(--color-grey-light)
 }
 
 .choices__item.choices__item--choice.has-no-results {
