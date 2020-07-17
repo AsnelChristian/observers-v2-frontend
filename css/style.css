@@ -1176,7 +1176,7 @@ body {
   .form__group:not(:last-child) {
     margin-bottom: 1.5rem; }
   .form__group--small {
-    width: 50%; }
+    width: 60%; }
   .form__group--split {
     display: flex;
     justify-content: space-between;
@@ -1190,11 +1190,15 @@ body {
   padding: .8rem 0;
   font-size: 1.5rem;
   transition: all .2s; }
-  .form__input:focus, .form__textarea:focus {
+  .form__input:valid, .form__input:focus, .form__input:required, .form__textarea:valid, .form__textarea:focus, .form__textarea:required {
     border-bottom-color: var(--color-secondary);
-    outline: none; }
-  .form__input:required, .form__input:invalid, .form__textarea:required, .form__textarea:invalid {
+    outline: none;
+    box-shadow: none; }
+  .form__input:invalid, .form__textarea:invalid {
     border-bottom-color: var(---color-primary); }
+
+.form__input:required + .form__label > span:after {
+  content: "*"; }
 
 .form__input {
   background-color: var(--color-white); }
@@ -1225,6 +1229,9 @@ body {
   .form__label--select {
     position: relative;
     margin-bottom: .5rem; }
+
+.form__message {
+  color: var(--color-primary); }
 
 .form__input:placeholder-shown + .form__label {
   font-size: 1.5rem;

@@ -53,12 +53,12 @@
                     <h3 class="section__title margin-bottom-small">Create a new topic</h3>
                     <form action="#" class="form form--create-topic">
                         <div class="form__group">
-                            <input type="text" class="form__input" id="title" placeholder="Title">
-                            <label for="title" class="form__label">Topic's title</label>
+                            <input type="text" class="form__input" id="title" placeholder="Title" required>
+                            <label for="title" class="form__label">Topic's title <span class="form__message"></span></label>
                         </div>
                         <div class="form__group form__group--small">
-                            <label class="form__label--title" for="select-category-create-topic-form">Topic's category</label>
-                            <select class="form-control" data-trigger name="choices-single-default" id="select-category-create-topic-form" placeholder="Search category">
+                            <label class="form__label--title" for="select-category-create-topic-form">Topic's category <span class="form__message">*</span></label>
+                            <select class="form-control" data-trigger name="choices-single-default" id="select-category-create-topic-form" placeholder="Search category" required>
                                 <option value="">Select category</option>
                                 <option value="Politics"># Politics</option>
                                 <option value="Climate & Environment"># Climate & Environment</option>
@@ -68,8 +68,8 @@
                             </select>
                         </div>
                         <div class="form__group">
-                            <label class="form__label--title" for="topicDescription">Topic's description</label>
-                            <input name="description" id="topicDescription" type="hidden">
+                            <label class="form__label--title" for="topicDescription" id="topicDescriptionLabel">Topic's description <span class="form__message">*</span></label>
+                            <input name="description" id="topicDescription" type="hidden" required>
                             <div class="form__editor editor"></div>
                         </div>
                         <div class="form__group">
@@ -413,5 +413,9 @@
         <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 
         <script src="js/index.js" ></script>
+        <script src="js/mapbox.js"></script>
+        <script src="js/quill.js"></script>
+        <script src="js/choicejs.js"></script>
+        <script src="js/form.js"></script>
     </body>
 </html>
