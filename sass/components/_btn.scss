@@ -7,7 +7,9 @@
     cursor: pointer;
     font-size: $default-font-size;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     font-family: 'Fjalla One', sans-serif;
     text-transform: uppercase;
@@ -68,6 +70,15 @@
       }
     }
   }
+  &__font--default {
+    &,
+    &:link,
+    &:visited {
+      font-family: inherit;
+      text-transform: none;
+      font-size: 1.4rem;
+    }
+  }
   &--brown {
     border: 2px solid var(--color-secondary);
     color: var(--color-secondary);
@@ -124,5 +135,19 @@
   &:hover,
   &:active {
     background-color: darken($color-primary, 10%);
+  }
+}
+
+.btn-secondary {
+  &,
+  &:link,
+  &:visited {
+    color: var(--color-white);
+    background-color: lighten($color-secondary, 5%);
+    transition: all .2s ease;
+  }
+  &:hover,
+  &:active {
+    background-color: var(--color-black);
   }
 }

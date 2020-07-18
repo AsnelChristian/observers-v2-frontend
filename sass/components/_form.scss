@@ -149,6 +149,12 @@
     &:not(:last-child) {
       margin-bottom: 1.5rem;
     }
+    &--small-margin {
+      padding: 1.2rem 0;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
 
     &--small {
       width: 60%;
@@ -233,5 +239,38 @@
   }
   &__editor {
     height: 15rem;
+  }
+
+  &__submit--full {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    color: var(--color-white);
+    cursor: pointer;
+
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    font-family: inherit;
+    text-align: center;
+    transition: all .2s;
+
+    &--black {
+      background-color: var(--color-black);
+
+      &:hover,
+      &:active {
+        background-color: var(--color-secondary);
+      }
+    }
+    &--secondary {
+      background-color: var(--color-secondary);
+
+      &:hover,
+      &:active {
+        background-color: var(--color-black);
+      }
+    }
   }
 }
