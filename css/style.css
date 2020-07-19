@@ -290,10 +290,12 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between; }
   .navigation__logo {
-    height: 3rem; }
+    height: 4rem; }
+    .navigation__logo img {
+      height: 100%; }
 
 .hero-box {
   display: flex;
@@ -1513,6 +1515,46 @@ body {
   .tag:active {
     background-color: #a7863e; }
 
+.about__main {
+  grid-row: 2/3;
+  grid-column: full-start / full-end; }
+
+.about {
+  margin-bottom: -5rem;
+  grid-row: 3/4;
+  grid-column: full-start / full-end; }
+  .about__element {
+    display: flex;
+    padding: 12rem; }
+    .about__element:nth-child(2n+1) {
+      background-color: var(--color-black);
+      color: var(--color-white); }
+    .about__element > div {
+      display: flex;
+      align-items: center; }
+      .about__element > div:last-child {
+        justify-content: flex-end; }
+    .about__element--header {
+      flex-basis: 50%; }
+    .about__element--title {
+      display: inline-block;
+      padding-top: .5rem;
+      margin-bottom: 1.6rem;
+      font-size: 4rem;
+      color: #ba9545;
+      font-family: 'Frank Ruhl Libre', serif;
+      position: relative; }
+      .about__element--title::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30%;
+        height: .4rem;
+        background-color: #ba9545; }
+    .about__element--content {
+      flex-basis: 50%; }
+
 .topic-view__header {
   grid-row: 2/3;
   grid-column: full-start/full-end;
@@ -1590,7 +1632,8 @@ body {
   padding-bottom: 1.5rem; }
 
 .sign a {
-  text-align: left; }
+  text-align: left;
+  display: inline-block; }
 
 .sign__form {
   width: 60%; }
