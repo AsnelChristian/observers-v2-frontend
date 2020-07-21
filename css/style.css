@@ -1246,6 +1246,8 @@ body {
   background-color: var(--color-white); }
   .form__input::placeholder {
     color: transparent; }
+  .form__input::-ms-input-placeholder {
+    color: transparent; }
 
 .form__textarea {
   margin-top: 2rem;
@@ -1515,25 +1517,37 @@ body {
   .tag:active {
     background-color: #a7863e; }
 
-.about__main {
-  grid-row: 2/3;
-  grid-column: full-start / full-end; }
-
 .about {
   margin-bottom: -5rem;
   grid-row: 3/4;
   grid-column: full-start / full-end; }
+  .about__element, .about__main {
+    display: grid;
+    grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 13.7rem) [col-end]) [center-end] 1fr [full-end];
+    grid-template-rows: min-content; }
+    .about__element--container, .about__main--container {
+      grid-row: 1/-1;
+      grid-column: center-start / center-end; }
+  .about__main {
+    grid-row: 2/3;
+    grid-column: full-start / full-end;
+    background-color: var(--color-black-lighter);
+    color: var(--color-white);
+    padding: 12rem 0;
+    margin-bottom: -5rem; }
   .about__element {
-    display: flex;
-    padding: 12rem; }
+    grid-column: center-start / center-end; }
+    .about__element--container {
+      display: flex;
+      padding: 13rem 0; }
+      .about__element--container > div {
+        display: flex;
+        align-items: center; }
+        .about__element--container > div:last-child {
+          justify-content: flex-end; }
     .about__element:nth-child(2n+1) {
       background-color: var(--color-black);
       color: var(--color-white); }
-    .about__element > div {
-      display: flex;
-      align-items: center; }
-      .about__element > div:last-child {
-        justify-content: flex-end; }
     .about__element--header {
       flex-basis: 50%; }
     .about__element--title {
@@ -1544,6 +1558,8 @@ body {
       color: #ba9545;
       font-family: 'Frank Ruhl Libre', serif;
       position: relative; }
+      .about__element--title--big {
+        font-size: 5rem; }
       .about__element--title::after {
         content: '';
         position: absolute;
