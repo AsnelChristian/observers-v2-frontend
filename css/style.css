@@ -50,6 +50,15 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 .simplebar-scroll-content {
   box-sizing: content-box; }
@@ -172,6 +181,14 @@ body {
   text-transform: uppercase;
   padding-bottom: 1.5rem;
   border-bottom: 3px solid var(--color-black); }
+
+.text__primary {
+  color: var(--color-primary); }
+
+.text__404 {
+  font-size: 20rem;
+  font-weight: 700;
+  letter-spacing: 1.2rem; }
 
 .text-italics {
   font-style: italic !important; }
