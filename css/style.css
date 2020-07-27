@@ -30,6 +30,14 @@
     opacity: 1;
     transform: translateX(-50%) scaleX(1); } }
 
+@keyframes growInTop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0); }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1); } }
+
 :root {
   --color-primary: #D80C3D;
   --color-secondary: #ba9545;
@@ -59,6 +67,9 @@ html {
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
+
+body {
+  position: relative; }
 
 .simplebar-scroll-content {
   box-sizing: content-box; }
@@ -245,29 +256,39 @@ body {
         height: 100%;
         object-fit: cover; }
 
+.menu-container,
 .full-container {
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1) scaleY(1);
   width: 100vw;
   min-height: 100vh;
+  z-index: 1000; }
+
+.full-container {
   background-color: rgba(255, 255, 255, 0.75);
-  z-index: 1000;
   transform-origin: right;
   animation: growInRight 1s; }
 
+.menu,
 .form-container {
   padding: 4rem 3rem 1rem;
   position: absolute;
   top: 0;
   left: 100%;
   transform: translateX(-100%);
-  width: 50%;
   height: 100%;
-  background-color: var(--color-white);
   box-shadow: 0 0.2rem 2.4rem -0.2rem rgba(0, 0, 0, 0.14);
   overflow-y: scroll; }
+
+.menu {
+  width: 40%;
+  background-color: var(--color-black-lighter); }
+
+.form-container {
+  width: 50%;
+  background-color: var(--color-white); }
   .form-container__close {
     display: block;
     position: fixed;
@@ -287,11 +308,12 @@ body {
       left: 0;
       width: 100%;
       height: .2rem;
-      background-color: var(--color-black-lighter);
       transform: rotate(45deg);
       transform-origin: center; }
     .form-container__close::before {
       transform: rotate(-45deg); }
+    .form-container__close::after, .form-container__close::before {
+      background-color: var(--color-black-lighter); }
 
 .header {
   grid-row: 1/2;
@@ -989,6 +1011,107 @@ body {
 
 .mapboxgl-canvas {
   left: 0; }
+
+.menu-container {
+  background-color: rgba(0, 0, 0, 0.75);
+  transform-origin: top;
+  transform: translateX(-50%) scaleY(0);
+  opacity: 0;
+  transition: all 1s; }
+
+.menu-list {
+  list-style: none;
+  position: absolute;
+  width: 65%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.menu__checkbox {
+  display: none; }
+
+.menu__checkbox:checked ~ .menu-container {
+  transform: translateX(-50%) scaleY(1);
+  opacity: 1; }
+
+.menu__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--color-black);
+  transition: all .2s; }
+  .menu__button:hover {
+    background-color: var(--color-black-lighter); }
+
+.menu__icon {
+  display: block;
+  position: relative; }
+  .menu__icon, .menu__icon::after, .menu__icon::before {
+    height: .2rem;
+    width: 3rem;
+    background-color: var(--color-secondary);
+    transform-origin: center; }
+  .menu__icon::after, .menu__icon::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    transition: all .2s; }
+  .menu__icon::after {
+    top: -.8rem; }
+  .menu__icon::before {
+    top: .8rem; }
+
+.menu__button:hover .menu__icon::after {
+  top: -1rem; }
+
+.menu__button:hover .menu__icon::before {
+  top: 1rem; }
+
+.menu__checkbox:checked + .menu__button .menu__icon {
+  background-color: transparent; }
+
+.menu__checkbox:checked + .menu__button .menu__icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
+
+.menu__checkbox:checked + .menu__button .menu__icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.menu__link {
+  display: block;
+  padding: 1.5rem 4rem;
+  margin-bottom: .1rem;
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: 'Frank Ruhl Libre', serif;
+  letter-spacing: .2rem;
+  z-index: 10000;
+  position: relative; }
+  .menu__link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: var(--color-secondary);
+    z-index: -1;
+    transition: transform .3s; }
+  .menu__link:hover::after {
+    transform: scaleX(1); }
+  .menu__link--active::after {
+    transform: scaleX(0.02); }
 
 .nav {
   list-style: none; }
