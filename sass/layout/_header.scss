@@ -3,7 +3,9 @@
   grid-column: center-start / center-end;
   position: relative;
 
-  height: 95vh;
+  &--set-height {
+    height: 95vh;
+  }
 
   @include respond(tab-port) {
     //height: 55vh;
