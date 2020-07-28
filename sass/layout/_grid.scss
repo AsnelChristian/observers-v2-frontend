@@ -25,6 +25,14 @@
     &--1 {
       flex-basis: 45%;
 
+      @include respond(tab-port) {
+        flex-basis: 50%;
+      }
+
+      @include respond(phone) {
+        flex-basis: 100%;
+      }
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -34,6 +42,16 @@
 
     &--2 {
       flex-basis: 55%;
+
+      @include respond(tab-port) {
+        flex-basis: 50%;
+      }
+
+      @include respond(phone) {
+        display: none;
+        visibility: hidden;
+      }
+
       img {
         width: 100%;
         height: 100%;
