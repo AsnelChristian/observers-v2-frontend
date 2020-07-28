@@ -4,10 +4,23 @@
 
   position: relative;
 
+  @include respond(tab-port) {
+    padding: 0 4rem;
+  }
+
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
+
   &__search-bar {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    @include respond(tab-port) {
+      display: none;
+      visibility: hidden
+    }
 
     &--filters {
       flex: 1;
@@ -27,12 +40,21 @@
   &__view {
     display: flex;
     align-items: flex-start;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
   }
 }
 
 .topic-list {
   list-style: none;
   flex-basis: 65%;
+
+  @include respond(tab-port) {
+    flex: 1;
+    align-self: stretch;
+  }
 
   display: flex;
   flex-direction: column;
@@ -56,6 +78,14 @@
     box-shadow: $box-shadow-normal;
     z-index: 200;
     animation: fadeInBottom 2s;
+
+    @include respond(tab-port) {
+      width: 70%
+    }
+
+    @include respond(phone) {
+      width: 80%;
+    }
 
     &--close {
       position: fixed;
@@ -82,6 +112,12 @@
   animation: fadeInRight 3s;
   margin-left: 4rem;
   flex: 1;
+
+  @include respond(tab-port) {
+    padding-top: 5rem;
+    margin-left: 0;
+    align-self: stretch;
+  }
 
   &__list {
     list-style: none;

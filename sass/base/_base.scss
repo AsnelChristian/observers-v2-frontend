@@ -38,7 +38,7 @@ html {
     font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
   }
 
-  @include respond(tab-port) { // width < 900?
+  @include respond(tab-land-small) { // width < 900?
     font-size: 50%; //1 rem = 8px, 8/16 = 50%
   }
 
@@ -49,6 +49,7 @@ html {
 
 body {
   position: relative;
+  overflow-x: hidden;
 }
 
 .simplebar-scroll-content {

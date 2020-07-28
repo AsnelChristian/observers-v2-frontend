@@ -92,3 +92,12 @@ selectGroups.forEach((g) => {
         });
     });
 });
+
+const menuSidebarToggle = document.querySelector('.menu__checkbox');
+const menuSidebarLinks = document.querySelectorAll('.menu__link');
+
+menuSidebarLinks.forEach(m => {
+    m.addEventListener('click', () => {
+        menuSidebarToggle.checked = false;
+    });
+});

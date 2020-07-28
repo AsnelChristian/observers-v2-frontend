@@ -3,6 +3,17 @@
   grid-column: center-start / center-end;
   position: relative;
 
+  height: 95vh;
+
+  @include respond(tab-port) {
+    //height: 55vh;
+    padding: 0 4rem;
+  }
+  @include respond(phone) {
+    //height: 70vh;
+    padding: 0 2rem;
+  }
+
   &__scroll-down {
     position: absolute;
     bottom: 0;
@@ -33,13 +44,28 @@
   align-items: center;
   justify-content: space-between;
 
+  @include respond(tab-port) {
+    height: 80%;
+  }
+
   &__msg {
     flex: 1;
     padding-right: 4rem;
+
+    @include respond(tab-port) {
+      flex-basis: 100%;
+      align-self: center;
+      padding-right: 0;
+    }
   }
   &__hero {
     flex-basis: 45%;
     overflow: hidden;
+
+    @include respond(tab-port) {
+      display: none;
+      visibility: hidden;
+    }
   }
 
   &__img {
