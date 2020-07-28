@@ -150,9 +150,17 @@ body {
     color: var(--color-primary);
   }
   &__404 {
-
     font-size: 20rem;
     font-weight: 700;
     letter-spacing: 1.2rem;
+
+    @include respond(tab-port) {
+      font-size: 18rem;
+      letter-spacing: 1rem;
+    }
+    @include respond(phone) {
+      font-size: 20rem;
+      letter-spacing: 1.2rem;
+    }
   }
 }

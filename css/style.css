@@ -201,6 +201,14 @@ body {
   font-size: 20rem;
   font-weight: 700;
   letter-spacing: 1.2rem; }
+  @media only screen and (max-width: 56.25em) {
+    .text__404 {
+      font-size: 18rem;
+      letter-spacing: 1rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .text__404 {
+      font-size: 20rem;
+      letter-spacing: 1.2rem; } }
 
 .text-italics {
   font-style: italic !important; }
@@ -252,7 +260,7 @@ body {
       align-items: center; }
       @media only screen and (max-width: 56.25em) {
         .container--full__col--1 {
-          flex-basis: 50%; } }
+          flex-basis: 48%; } }
       @media only screen and (max-width: 37.5em) {
         .container--full__col--1 {
           flex-basis: 100%; } }
@@ -260,7 +268,7 @@ body {
       flex-basis: 55%; }
       @media only screen and (max-width: 56.25em) {
         .container--full__col--2 {
-          flex-basis: 50%; } }
+          flex-basis: 52%; } }
       @media only screen and (max-width: 37.5em) {
         .container--full__col--2 {
           display: none;
@@ -1890,6 +1898,21 @@ body {
 
 .sign__form {
   width: 60%; }
+  @media only screen and (max-width: 75em) {
+    .sign__form {
+      width: 65%; } }
+  @media only screen and (max-width: 64em) {
+    .sign__form {
+      width: 70%; } }
+  @media only screen and (max-width: 56.25em) {
+    .sign__form {
+      width: 75%; } }
+  @media only screen and (max-width: 37.5em) {
+    .sign__form {
+      width: 80%; } }
+  @media only screen and (max-width: 56.25em) {
+    .sign__form--404 {
+      width: 85%; } }
 
 .sign__alt-operation--el {
   width: 100%;

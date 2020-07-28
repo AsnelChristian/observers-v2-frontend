@@ -26,7 +26,7 @@
       flex-basis: 45%;
 
       @include respond(tab-port) {
-        flex-basis: 50%;
+        flex-basis: 48%;
       }
 
       @include respond(phone) {
@@ -44,7 +44,7 @@
       flex-basis: 55%;
 
       @include respond(tab-port) {
-        flex-basis: 50%;
+        flex-basis: 52%;
       }
 
       @include respond(phone) {
