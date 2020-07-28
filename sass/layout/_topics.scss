@@ -59,6 +59,23 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  &__configs {
+    align-self: stretch;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__filter {
+    display: none;
+    visibility: hidden;
+
+    @include respond(tab-port) {
+      display: block;
+      visibility: visible;
+    }
+  }
 }
 
 .topic-map {

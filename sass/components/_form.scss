@@ -114,7 +114,10 @@
 
 .view-switch {
   display: inline-block;
+}
 
+
+.form-button {
   &__label {
     display: inline-block;
     margin-left: 1rem;
@@ -124,21 +127,66 @@
     box-shadow: $box-shadow-subtle;
 
     cursor: pointer;
+
+    &--button {
+      margin-left: 0;
+      transition: all .2s;
+
+      &:hover {
+        background-color: var(--color-secondary);
+      }
+    }
   }
+
   &__icon {
     width: 2.5rem;
     height: 2.5rem;
     fill: var(--color-secondary);
+
+    transition: all .1s;
+
+    &--close {
+      display: none;
+      visibility: hidden;
+    }
   }
+
+  &__label--button:hover &__icon {
+    fill: var(--color-white);
+  }
+
   &__input {
     display: none;
   }
-  &__input:checked + &__label {
-    background-color: var(--color-black);
-    &__icon {
-      fill: var(--color-white);
-    }
+
+  &__input:checked + &__label--button {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 7rem;
+    height: 6rem;
+
+    z-index: 1000000;
   }
+
+  &__input:checked + &__label--switch {
+    background-color: var(--color-black);
+  }
+  &__input:checked + &__label--button {
+    background-color: var(--color-black);
+  }
+  &__input:checked + &__label--button &__icon {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+#topic-list__filter-button:checked ~ .menu-container {
+  transform: translateX(-50%) scaleY(1);
+  opacity: 1;
+
+  z-index: 100000;
 }
 
 .form {

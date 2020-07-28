@@ -10,6 +10,10 @@
     border: .2rem solid var(--color-black);
     display: flex;
 
+    @include respond(tab-land) {
+      border: .3rem solid var(--color-black);
+    }
+
     span {
       display: block;
       height: .6rem;
