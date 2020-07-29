@@ -187,20 +187,40 @@
                 </div>
             </div>
             <h3 class="section__title margin-bottom-small">What's been reported</h3>
-            <form class="topic-view__report-switch view-switch margin-bottom-extra-small" autocomplete="off">
-                <input type="radio" id="view-switch--list" class="view-switch__input view-switch--list" name="view-selector" checked>
-                <label for="view-switch--list" class="view-switch__label">
-                    <svg class="view-switch__icon">
-                        <use xlink:href="img/sprite.svg#icon-list"></use>
-                    </svg>
-                </label>
-                <input type="radio" id="view-switch--map" class="view-switch__input view-switch--map" name="view-selector">
-                <label for="view-switch--map" class="view-switch__label">
-                    <svg class="view-switch__icon">
-                        <use xlink:href="img/sprite.svg#icon-map"></use>
-                    </svg>
-                </label>
-            </form>
+            <div class="topic-list__configs">
+                <div class="topic-list__filter">
+                    <input type="checkbox" id="topic-list__filter-button" class="form-button__input">
+                    <label for="topic-list__filter-button" class="form-button__label form-button__label--button">
+                        <span class="form-button__icon--close create-topic-close btn-close">
+                            <span class="btn-close__icon"></span>
+                        </span>
+                        <svg class="form-button__icon">
+                            <use xlink:href="img/sprite.svg#icon-line-graph"></use>
+                        </svg>
+                    </label>
+                    <div class="topic-list__filter-container menu-container menu-container--left">
+                        <div class="menu menu--left menu--full" data-simplebar data-simplebar-auto-hide="false">
+                        </div>
+                    </div>
+
+                </div>
+                <div>&nbsp;</div>
+                <form class="view-switch margin-bottom-extra-small" autocomplete="off">
+                    <input type="radio" id="view-switch--list" class="form-button__input view-switch--list" name="view-selector" checked>
+                    <label for="view-switch--list" class="form-button__label form-button__label--switch">
+                        <svg class="form-button__icon">
+                            <use xlink:href="img/sprite.svg#icon-list"></use>
+                        </svg>
+                    </label>
+                    <input type="radio" id="view-switch--map" class="form-button__input view-switch--map" name="view-selector">
+                    <label for="view-switch--map" class="form-button__label form-button__label--switch">
+                        <svg class="form-button__icon">
+                            <use xlink:href="img/sprite.svg#icon-map"></use>
+                        </svg>
+                    </label>
+                </form>
+            </div>
+
             <div class="reports margin-bottom-small">
                 <div class="report">
                     <div class="report__info info-line">
