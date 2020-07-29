@@ -199,3 +199,57 @@
     background-color: var(--color-white);
   }
 }
+
+.btn-respond {
+  cursor: pointer;
+
+  position: fixed;
+  z-index: 100000;
+
+  bottom: 4rem;
+  @include respond(tab-port) {
+    right: 4rem;
+  }
+  @include respond(phone) {
+    right: 2rem;
+  }
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 20rem;
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-secondary);
+    position: relative;
+    z-index: 99999;
+  }
+
+  &--black {
+    background-color: var(--color-black);
+
+    &:hover {
+      background-color: var(--color-black-lighter);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 7rem;
+    height: 7rem;
+    border-radius: 20rem;
+    background-color: currentColor;
+    z-index: 99998;
+
+    animation: pulse 1s infinite;
+  }
+}

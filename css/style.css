@@ -38,6 +38,17 @@
     opacity: 1;
     transform: translateX(-50%) scaleY(1); } }
 
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1); }
+  50% {
+    opacity: .5;
+    transform: translate(-50%, -50%) scale(0.75); }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1); } }
+
 :root {
   --color-primary: #D80C3D;
   --color-secondary: #ba9545;
@@ -655,6 +666,47 @@ body {
   .btn-close:hover .btn-close__icon::after,
   .btn-close:hover .btn-close__icon::before {
     background-color: var(--color-white); }
+
+.btn-respond {
+  cursor: pointer;
+  position: fixed;
+  z-index: 100000;
+  bottom: 4rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 20rem; }
+  @media only screen and (max-width: 56.25em) {
+    .btn-respond {
+      right: 4rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .btn-respond {
+      right: 2rem; } }
+  .btn-respond__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-secondary);
+    position: relative;
+    z-index: 99999; }
+  .btn-respond--black {
+    background-color: var(--color-black); }
+    .btn-respond--black:hover {
+      background-color: var(--color-black-lighter); }
+  .btn-respond::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 20rem;
+    background-color: currentColor;
+    z-index: 99998;
+    animation: pulse 1s infinite; }
 
 .topic {
   width: 100%;

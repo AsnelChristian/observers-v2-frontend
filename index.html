@@ -18,6 +18,11 @@
     </head>
     <body class="container">
 
+        <button class="btn-respond btn-respond--black add-topic__btn">
+            <svg class="btn-respond__icon">
+                <use xlink:href="img/sprite.svg#icon-quill"></use>
+            </svg>
+        </button>
         <input type="checkbox" class="menu__checkbox" id="menu__checkbox">
         <label for="menu__checkbox" class="menu__button">
             <span class="menu__icon"></span>
@@ -27,7 +32,7 @@
                 <ul class="menu-list">
                     <li class="menu__item menu__item--1"><a href="#" class="menu__link menu__link--active">Home</a></li>
                     <li class="menu__item menu__item--2"><a href="#topics" class="menu__link">See topics</a></li>
-                    <li class="menu__item menu__item--2"><a href="#topics" class="menu__link">Create new topics</a></li>
+                    <li class="menu__item menu__item--2"><span class="menu__link add-topic__btn">Create new topics</span></li>
                     <li class="menu__item menu__item--3"><a href="/about.html" class="menu__link">About</a></li>
                     <li class="menu__item menu__item--4"><a href="/signin.html" class="menu__link">Sign In</a></li>
                     <li class="menu__item menu__item--5"><a href="/signup.html" class="menu__link">Create an account</a></li>
@@ -430,7 +435,7 @@
                         </li>
                     </ul>
                     <div class="full-width">
-                        <div class="full-width__btn btn btn-black" id="add-topic__btn">
+                        <div class="full-width__btn btn btn-black add-topic__btn" id="add-topic__btn">
                             <svg class="btn__icon">
                                 <use xlink:href="img/sprite.svg#icon-quill"></use>
                             </svg>

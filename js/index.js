@@ -34,14 +34,15 @@ topicsMapViewToggle.addEventListener('click', e => {
     });
 });
 
-const createTopicButton = document.querySelector('#add-topic__btn');
+const createTopicButtons = document.querySelectorAll('.add-topic__btn');
 const createTopicFormContainer = document.querySelector('.create-topic-form');
 const createTopicClose = document.querySelector('.create-topic-close');
 
-createTopicButton.addEventListener('click', function() {
-    createTopicFormContainer.style.transform = 'translateX(-50%) scaleX(1)';
-    createTopicFormContainer.style.opacity = '1';
-
+createTopicButtons.forEach(b => {
+    b.addEventListener('click', function() {
+        createTopicFormContainer.style.transform = 'translateX(-50%) scaleX(1)';
+        createTopicFormContainer.style.opacity = '1';
+    });
 });
 
 createTopicClose.addEventListener('click', function(){
