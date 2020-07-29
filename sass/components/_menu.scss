@@ -6,6 +6,10 @@
   transition: all 1s;
 }
 
+.menu-container--white {
+  background-color: var(--color-white);
+}
+
 .menu-list {
   list-style: none;
   position: absolute;
@@ -30,7 +34,6 @@
   &__button {
     position: fixed;
     top: 2rem;
-    right: 1.5rem;
     z-index: 100000;
     cursor: pointer;
     align-items: center;
@@ -44,8 +47,12 @@
     visibility: hidden;
 
     @include respond(tab-port) {
+      right: 4rem;
       display: inline-flex;
       visibility: visible;
+    }
+    @include respond(phone) {
+      right: 2rem;
     }
 
     &:hover {

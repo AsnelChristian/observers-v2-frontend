@@ -206,12 +206,15 @@
   position: fixed;
   z-index: 100000;
   border: none;
-  display: flex;
+
   justify-content: center;
   align-items: center;
   width: 5rem;
   height: 5rem;
   border-radius: 20rem;
+
+  display: none;
+  visibility: hidden;
 
   &--topic {
     bottom: 4rem;
@@ -220,6 +223,8 @@
     bottom: 10rem;
   }
   @include respond(tab-port) {
+    display: flex;
+    visibility: visible;
     right: 4rem;
   }
   @include respond(phone) {

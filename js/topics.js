@@ -4,7 +4,6 @@ const sentimentData = [
     {name: 'positive', value: 75, itemStyle: {color: '#ba9545'}}
     ];
 
-const sentimentChart = echarts.init(document.querySelector('#sentiment-pie'));
 
 const sentimentChartOption = {
     title: {
@@ -44,7 +43,10 @@ const sentimentChartOption = {
     ]
 };
 
-sentimentChart.setOption(sentimentChartOption);
+document.querySelectorAll('.sentiment-pie').forEach(c => {
+    let sentimentChart = echarts.init(c);
+    sentimentChart.setOption(sentimentChartOption);
+});
 
 
 let base = +new Date(2020, 9, 3);
@@ -163,8 +165,10 @@ reportChartoption = {
     ]
 };
 
-reportChart = echarts.init(document.querySelector('.report-freq'));
-reportChart.setOption(reportChartoption);
+document.querySelectorAll('.report-freq').forEach(r => {
+    let reportChart = echarts.init(r);
+    reportChart.setOption(reportChartoption);
+});
 
 
 // Todo: Refactor js code
