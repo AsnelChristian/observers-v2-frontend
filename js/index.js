@@ -39,11 +39,14 @@ const createTopicFormContainer = document.querySelector('.create-topic-form');
 const createTopicClose = document.querySelector('.create-topic-close');
 
 createTopicButton.addEventListener('click', function() {
-    createTopicFormContainer.classList.remove('hide');
+    createTopicFormContainer.style.transform = 'translateX(-50%) scaleX(1)';
+    createTopicFormContainer.style.opacity = '1';
+
 });
 
 createTopicClose.addEventListener('click', function(){
-    createTopicFormContainer.classList.add('hide');
+    createTopicFormContainer.style.transform = 'translateX(-50%) scaleX(0)';
+    createTopicFormContainer.style.opacity = '0';
 });
 
 

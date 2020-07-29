@@ -48,7 +48,6 @@
       visibility: visible;
     }
 
-
     &:hover {
       background-color: var(--color-black-lighter);
     }
@@ -89,6 +88,7 @@
 
   &__checkbox:checked + &__button {
     top: 0;
+    right: 0;
   }
   &__checkbox:checked + &__button &__icon {
     background-color: transparent;

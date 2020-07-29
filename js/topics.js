@@ -195,11 +195,14 @@ const createTopicForm = document.querySelector('.create-topic-form');
 const createTopicClose = document.querySelector('.create-topic-close');
 
 createTopicButton.addEventListener('click', function() {
-    createTopicForm.classList.remove('hide');
+    createTopicForm.style.transform = 'translateX(-50%) scaleX(1)';
+    createTopicForm.style.opacity = '1';
+
 });
 
 createTopicClose.addEventListener('click', function(){
-    createTopicForm.classList.add('hide');
+    createTopicForm.style.transform = 'translateX(-50%) scaleX(0)';
+    createTopicForm.style.opacity = '0';
 });
 
 
@@ -208,14 +211,14 @@ const createReportForm = document.querySelector('.create-report-form');
 const createReportClose = document.querySelector('.create-report-close');
 
 createReportButton.addEventListener('click', function() {
-    createReportForm.classList.remove('hide');
+    createReportForm.style.transform = 'translateX(-50%) scaleX(1)';
+    createReportForm.style.opacity = '1';
 });
 
 createReportClose.addEventListener('click', function(){
-    createReportForm.classList.add('hide');
+    createReportForm.style.transform = 'translateX(-50%) scaleX(0)';
+    createReportForm.style.opacity = '0';
 });
-
-
 
 const selectCategoryCreateTopicForm = new Choices('#select-category-create-topic-form');
 const selectTagsCreateTopicForm = new Choices('#select-tags-create-topic-form', {

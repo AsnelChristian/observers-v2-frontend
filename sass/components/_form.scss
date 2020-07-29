@@ -131,6 +131,7 @@
     &--button {
       margin-left: 0;
       transition: all .2s;
+      z-index: 1000000;
 
       &:hover {
         background-color: var(--color-secondary);
@@ -163,11 +164,13 @@
     position: fixed;
     top: 0;
     left: 0;
+  }
 
-    width: 7rem;
-    height: 6rem;
-
-    z-index: 1000000;
+  &__input:checked + &__label--button &__icon--close {
+    display: inline-flex;
+    visibility: visible;
+    top: 0;
+    left: 0;
   }
 
   &__input:checked + &__label--switch {

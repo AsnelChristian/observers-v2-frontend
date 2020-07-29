@@ -72,10 +72,18 @@
   z-index: 1000;
 }
 
+.menu-container--left {
+  z-index: 100001;
+}
+
 .full-container {
   background-color: rgba(255, 255, 255, 0.75);
   transform-origin: right;
-  animation: growInRight 1s;
+  transform: translateX(-50%) scaleX(0);
+  opacity: 0;
+  transition: all 1s;
+  //animation: growInRight 1s;
+  z-index: 100001;
 }
 
 .menu,
@@ -118,38 +126,10 @@
   width: 50%;
   background-color: var(--color-white);
 
-  &__close {
-    display: block;
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    transform-origin: center;
-    transition: all .2s;
-    cursor: pointer;
-
-    &:hover {
-      transform: rotate(360deg);
-    }
-
-    &::after,
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: .2rem;
-      transform: rotate(45deg);
-      transform-origin: center;
-    }
-    &::before {
-      transform: rotate(-45deg);
-    }
-    &::after,
-    &::before {
-      background-color: var(--color-black-lighter);
-    }
+  @include respond(tab-port) {
+    width: 75%;
+  }
+  @include respond(phone) {
+    width: 100%;
   }
 }

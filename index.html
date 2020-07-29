@@ -65,9 +65,11 @@
             </div>
         </header>
         <section class="topics" id="topics">
-            <div class="full-container create-topic-form hide" >
+            <div class="full-container create-topic-form" >
                 <div class="form-container" data-simplebar data-simplebar-auto-hide="false">
-                    <span class="create-topic-close form-container__close close"></span>
+                    <div class="create-topic-close btn-close">
+                        <span class="btn-close__icon"></span>
+                    </div>
                     <h3 class="section__title margin-bottom-small">Create a new topic</h3>
                     <form action="#" class="form form--create-topic">
                         <div class="form__group">
@@ -229,12 +231,14 @@
                         <div class="topic-list__filter">
                             <input type="checkbox" id="topic-list__filter-button" class="form-button__input">
                             <label for="topic-list__filter-button" class="form-button__label form-button__label--button">
-                                <span class="form-button__icon--close"></span>
+                                <span class="form-button__icon--close create-topic-close btn-close">
+                                    <span class="btn-close__icon"></span>
+                                </span>
                                 <svg class="form-button__icon">
                                     <use xlink:href="img/sprite.svg#icon-sound-mix"></use>
                                 </svg>
                             </label>
-                            <div class="topic-list__filter-container menu-container">
+                            <div class="topic-list__filter-container menu-container menu-container--left">
                                 <div class="menu menu--left menu--full" data-simplebar data-simplebar-auto-hide="false">
                                 </div>
                             </div>
