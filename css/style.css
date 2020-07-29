@@ -362,7 +362,7 @@ body {
   grid-column: center-start / center-end;
   position: relative; }
   .header--set-height {
-    min-height: 95vh; }
+    height: 95vh; }
   @media only screen and (max-width: 56.25em) {
     .header {
       padding: 0 4rem; } }
@@ -389,10 +389,8 @@ body {
 .hero-box {
   display: flex;
   align-items: center;
-  justify-content: space-between; }
-  @media only screen and (max-width: 56.25em) {
-    .hero-box {
-      height: 80%; } }
+  justify-content: space-between;
+  height: 80%; }
   .hero-box__msg {
     flex: 1;
     padding-right: 4rem; }
