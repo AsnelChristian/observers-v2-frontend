@@ -190,14 +190,15 @@ const editor = new Quill('.editor', {
 
 
 
-const createTopicButton = document.querySelector('#add-topic__btn');
+const createTopicButtons = document.querySelectorAll('.add-topic__btn');
 const createTopicForm = document.querySelector('.create-topic-form');
 const createTopicClose = document.querySelector('.create-topic-close');
 
-createTopicButton.addEventListener('click', function() {
-    createTopicForm.style.transform = 'translateX(-50%) scaleX(1)';
-    createTopicForm.style.opacity = '1';
-
+createTopicButtons.forEach(b => {
+    b.addEventListener('click', function() {
+        createTopicForm.style.transform = 'translateX(-50%) scaleX(1)';
+        createTopicForm.style.opacity = '1';
+    });
 });
 
 createTopicClose.addEventListener('click', function(){
@@ -206,13 +207,15 @@ createTopicClose.addEventListener('click', function(){
 });
 
 
-const createReportButton = document.querySelector('#add-report__btn');
+const createReportButtons = document.querySelectorAll('.add-report__btn');
 const createReportForm = document.querySelector('.create-report-form');
 const createReportClose = document.querySelector('.create-report-close');
 
-createReportButton.addEventListener('click', function() {
-    createReportForm.style.transform = 'translateX(-50%) scaleX(1)';
-    createReportForm.style.opacity = '1';
+createReportButtons.forEach(b => {
+    b.addEventListener('click', function() {
+        createReportForm.style.transform = 'translateX(-50%) scaleX(1)';
+        createReportForm.style.opacity = '1';
+    });
 });
 
 createReportClose.addEventListener('click', function(){

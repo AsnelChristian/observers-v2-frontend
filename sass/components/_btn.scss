@@ -205,14 +205,6 @@
 
   position: fixed;
   z-index: 100000;
-
-  bottom: 4rem;
-  @include respond(tab-port) {
-    right: 4rem;
-  }
-  @include respond(phone) {
-    right: 2rem;
-  }
   border: none;
   display: flex;
   justify-content: center;
@@ -221,6 +213,18 @@
   height: 5rem;
   border-radius: 20rem;
 
+  &--topic {
+    bottom: 4rem;
+  }
+  &--report {
+    bottom: 10rem;
+  }
+  @include respond(tab-port) {
+    right: 4rem;
+  }
+  @include respond(phone) {
+    right: 2rem;
+  }
   &__icon {
     width: 2.5rem;
     height: 2.5rem;
@@ -231,9 +235,15 @@
 
   &--black {
     background-color: var(--color-black);
-
     &:hover {
       background-color: var(--color-black-lighter);
+    }
+  }
+
+  &--brown {
+    background-color: var(--color-secondary);
+    &:hover {
+      background-color: lighten($color-secondary, .9);
     }
   }
 
@@ -247,9 +257,17 @@
     width: 7rem;
     height: 7rem;
     border-radius: 20rem;
-    background-color: currentColor;
     z-index: 99998;
 
     animation: pulse 1s infinite;
+  }
+  &--black::after {
+    background-color: currentColor;
+  }
+  &--brown::after {
+    background-color: var(--color-secondary);
+  }
+  &--brown &__icon {
+    fill: var(--color-white);
   }
 }

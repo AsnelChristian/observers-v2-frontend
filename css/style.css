@@ -671,7 +671,6 @@ body {
   cursor: pointer;
   position: fixed;
   z-index: 100000;
-  bottom: 4rem;
   border: none;
   display: flex;
   justify-content: center;
@@ -679,6 +678,10 @@ body {
   width: 5rem;
   height: 5rem;
   border-radius: 20rem; }
+  .btn-respond--topic {
+    bottom: 4rem; }
+  .btn-respond--report {
+    bottom: 10rem; }
   @media only screen and (max-width: 56.25em) {
     .btn-respond {
       right: 4rem; } }
@@ -695,6 +698,10 @@ body {
     background-color: var(--color-black); }
     .btn-respond--black:hover {
       background-color: var(--color-black-lighter); }
+  .btn-respond--brown {
+    background-color: var(--color-secondary); }
+    .btn-respond--brown:hover {
+      background-color: #bb9748; }
   .btn-respond::after {
     content: "";
     position: absolute;
@@ -704,9 +711,14 @@ body {
     width: 7rem;
     height: 7rem;
     border-radius: 20rem;
-    background-color: currentColor;
     z-index: 99998;
     animation: pulse 1s infinite; }
+  .btn-respond--black::after {
+    background-color: currentColor; }
+  .btn-respond--brown::after {
+    background-color: var(--color-secondary); }
+  .btn-respond--brown .btn-respond__icon {
+    fill: var(--color-white); }
 
 .topic {
   width: 100%;
