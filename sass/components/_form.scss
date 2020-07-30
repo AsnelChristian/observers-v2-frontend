@@ -9,13 +9,25 @@
     color: inherit;
     border: none;
     border-bottom: .2rem solid var(--color-black-lighter);
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 0;
 
+    @include respond(tab-land-small) {
+      border-bottom: .3rem solid var(--color-black-lighter);
+    }
+    @include respond(tab-port) {
+      border-bottom: .4rem solid var(--color-black-lighter);
+    }
     transition: all .3s;
 
     &:focus {
       outline: none;
       border-bottom: .2rem solid var(--color-secondary);
+      @include respond(tab-land-small) {
+        border-bottom: .3rem solid var(--color-secondary);
+      }
+      @include respond(tab-port) {
+        border-bottom: .4rem solid var(--color-secondary);
+      }
     }
   }
   &__button {

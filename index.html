@@ -243,8 +243,82 @@
                                     <use xlink:href="img/sprite.svg#icon-sound-mix"></use>
                                 </svg>
                             </label>
-                            <div class="topic-list__filter-container menu-container menu-container--left">
-                                <div class="menu menu--left menu--full" data-simplebar data-simplebar-auto-hide="false">
+                            <div class="topic-list__filter-container menu-container menu-container--left menu-container--white">
+                                <div class="menu menu--left menu--full menu--white menu--centered" data-simplebar data-simplebar-auto-hide="false">
+
+                                    <form action="#" class="search search--respond">
+                                        <input type="text" class="search__input" placeholder="Search topics">
+                                        <button class="search__button">
+                                            <svg class="search__icon">
+                                                <use xlink:href="img/sprite.svg#icon-search"></use>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                    <div class="topics__search-bar--filters topics__search-bar--filters--respond">
+                                        <div class="select-group select-group--1 multi-select" data-select="categories">
+                                            <div class="select-container">
+                                                <div class="selected">
+                                                    Select category
+                                                </div>
+                                                <div class="select-box">
+                                                    <div class="option-container option-container--orient-left" data-simplebar data-simplebar-auto-hide="false">
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" value="Politics" id="politics--respond" name="category">
+                                                            <label class="option__label option__label--active" for="politics--respond">Politics</label>
+                                                        </div>
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" id="Health--respond" value="Health" name="category">
+                                                            <label class="option__label" for="Health--respond">Health</label>
+                                                        </div>
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" value="Climate & environment" id="climate-environment--respond" name="category">
+                                                            <label class="option__label" for="climate-environment--respond">Climate & environment</label>
+                                                        </div>
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" value="Science" id="science--respond" name="category">
+                                                            <label class="option__label" for="science--respond">Science</label>
+                                                        </div>
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" value="technology" id="technology--respond" name="category">
+                                                            <label class="option__label" for="technology--respond">technology</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="select-group select-group--2 multi-select" data-select="tags">
+                                            <div class="select-container">
+                                                <div class="selected">
+                                                    Select tags
+                                                </div>
+                                                <div class="select-box">
+                                                    <div class="option-container option-container--orient-right" data-simplebar data-simplebar-auto-hide="false">
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" id="covid-19--respond" value="Covid-19" name="tags">
+                                                            <label class="option__label option__label--active" for="covid-19--respond">Covid-19 outbreak</label>
+                                                        </div>
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" id="novel--respond" value="Novel" name="tags">
+                                                            <label class="option__label" for="novel--respond">Novel</label>
+                                                        </div>
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" id="travels--respond" value="Travels" name="tags">
+                                                            <label class="option__label" for="travels--respond">Travels</label>
+                                                        </div>
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" id="Funny--respond" value="Funny" name="tags">
+                                                            <label class="option__label" for="Funny--respond">Funny</label>
+                                                        </div>
+                                                        <div class="option">
+                                                            <input class="option__radio" type="checkbox" id="black-lives-matter--respond" value="Black lives matter" name="tags">
+                                                            <label class="option__label" for="black-lives-matter--respond">Black lives matter</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="btn btn--small btn-black">Filter</span>
+                                    </div>
                                 </div>
                             </div>
 
