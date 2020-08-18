@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"/>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+
+    <link rel="stylesheet"  href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic|Frank+Ruhl+Libre:400,500,700|Fjalla+One:400" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
+
+    <title>Observers &mdash; See, Share, Save!</title>
+</head>
+<body class="container">
+
+    <input type="checkbox" class="menu__checkbox" id="menu__checkbox">
+    <label for="menu__checkbox" class="menu__button">
+        <span class="menu__icon"></span>
+    </label>
+    <div class="menu-container">
+        <div class="menu" data-simplebar data-simplebar-auto-hide="false">
+            <ul class="menu-list">
+                <li class="menu__item menu__item--1"><a href="#" class="menu__link menu__link--active">Home</a></li>
+                <li class="menu__item menu__item--2"><a href="#topics" class="menu__link">See topics</a></li>
+                <li class="menu__item menu__item--2"><a href="#topics" class="menu__link">Create new topics</a></li>
+                <li class="menu__item menu__item--3"><a href="/about.html" class="menu__link">About</a></li>
+                <li class="menu__item menu__item--4"><a href="/signin.html" class="menu__link">Sign In</a></li>
+                <li class="menu__item menu__item--5"><a href="/signup.html" class="menu__link">Create an account</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="full-container create-topic-form" >
+        <div class="form-container" data-simplebar data-simplebar-auto-hide="false">
+            <div class="create-topic-close btn-close">
+                <span class="btn-close__icon"></span>
+            </div>
+            <h3 class="section__title margin-bottom-small">Create a new topic</h3>
+            <form action="#" class="form form--create-topic">
+                <div class="form__group">
+                    <input type="text" class="form__input" id="title" placeholder="Title" minlength="50" maxlength="150" required>
+                    <label for="title" class="form__label">Topic's title <span class="form__message">*</span></label>
+                </div>
+                <div class="form__group form__group--small">
+                    <label class="form__label--title" for="select-category-create-topic-form">Topic's category <span class="form__message">*</span></label>
+                    <select class="form-control" data-trigger name="choices-single-default" id="select-category-create-topic-form" placeholder="Search category" required>
+                        <option value="">Select category</option>
+                        <option value="Politics"># Politics</option>
+                        <option value="Climate & Environment"># Climate & Environment</option>
+                        <option value="Health"># Health</option>
+                        <option value="Technology"># Technology</option>
+                        <option value="Entertainment"># Entertainment</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label class="form__label--title" for="topicDescription" id="topicDescriptionLabel">Topic's description <span class="form__message">*</span></label>
+                    <input name="description" id="topicDescription" type="hidden" required>
+                    <div class="form__editor editor"></div>
+                </div>
+                <div class="form__group">
+                    <input class="form-control form__input" id="select-tags-create-topic-form" type="text" value="" placeholder="Enter something" />
+                    <label class="form__label" for="select-tags-create-topic-form">Topic's tags</label>
+                </div>
+                <div class="form__group form-control--links">
+                    <input class="form-control form__input" id="select-mediaUrls-create-topic-form" type="text" value="" placeholder="Enter something" />
+                    <label class="form__label" for="select-mediaUrls-create-topic-form">Topic's supporting links or sources</label>
+                </div>
+                <div class="form__group form__group--split">
+                    <input type="Reset" value="Reset Form" class="btn btn--small btn-primary">
+                    <input type="submit" value="Create Topic" class="btn btn--small btn-black">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="navigation">
+            <a href="/index.html" class="navigation__logo"><img src="img/Group%2029@2x.png" alt="" ></a>
+            <ul class="nav">
+                <li class="nav__item"><a href="/index.html" class="nav__link nav__link--baseline nav__link--active">Home</a></li>
+                <li class="nav__item"><a href="/index.html#topics" class="nav__link nav__link--baseline">Topics</a></li>
+                <li class="nav__item"><a href="/about.html" class="nav__link nav__link--baseline">About</a></li>
+                <li class="nav__item"><a href="/signin.html" class="nav__link nav__link--cta">Sign in</a></li>
+                <li class="nav__item"><a href="/signup.html" class="nav__link nav__link--cta nav__link--cta--secondary">Sign up</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="user-view__container">
+        <div class="container">
+            <div class="user-view__content">
+                <ul class="user-view__menu">
+                    <li class="user-view__menu--item user-view__menu--item--active user-view__menu--item--1">
+                        <svg class="user-view__menu--icon">
+                            <use xlink:href="img/sprite.svg#icon-settings"></use>
+                        </svg>
+                        <span>Settings</span>
+                    </li>
+                    <li class="user-view__menu--item user-view__menu--item--2">
+                        <svg class="user-view__menu--icon">
+                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                        </svg>
+                        <span>My topics</span>
+                    </li>
+                    <li class="user-view__menu--item user-view__menu--item--3">
+                        <svg class="user-view__menu--icon">
+                            <use xlink:href="img/sprite.svg#icon-sound"></use>
+                        </svg>
+                        <span>My reports</span>
+                    </li>
+                </ul>
+                <div class="user-view__info">
+                    <div class="user-view__info--topics user-view__info--block hide">
+                        <p class="user-view__info--title">Topics you created</p>
+                        <div class="user-view__info--list">
+                            <div class="user-view__info--item">
+                                <img src="/img/politics.jpg" class="user-view__info--item--image" alt="">
+                                <div class="user-view__info--item--content">
+                                    <div class="topic__info--basics margin-bottom-small">
+                                        <span class="topic__info--time"><a href="#" class="link-info link-info--small">June 20, 2020</a></span>
+                                        <span class="topic__info--location"><a href="#" class="link-info link-info--small">Koblenz, Germany</a></span>
+                                        <span class="topic__info--category"><a href="#" class="link-info link-info--category">Politics</a></span>
+                                    </div>
+                                    <a href="#" class="margin-bottom-medium">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                </div>
+                                <div class="user-view__info--item--controls">
+                                    <button class="user-view__info--btn btn btn--small btn-black">
+                                        <svg class="btn__icon">
+                                            <use xlink:href="/img/sprite.svg#icon-trashcan"></use>
+                                        </svg>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="user-view__info--btn btn btn--small btn--brown btn--fill add-topic__btn">
+                                        <svg class="btn__icon user-view__info--icon">
+                                            <use xlink:href="/img/sprite.svg#icon-quill"></use>
+                                        </svg>
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="user-view__info--item">
+                                <img src="/img/politics.jpg" class="user-view__info--item--image" alt="">
+                                <div class="user-view__info--item--content">
+                                    <div class="topic__info--basics margin-bottom-small">
+                                        <span class="topic__info--time"><a href="#" class="link-info link-info--small">June 20, 2020</a></span>
+                                        <span class="topic__info--location"><a href="#" class="link-info link-info--small">Koblenz, Germany</a></span>
+                                        <span class="topic__info--category"><a href="#" class="link-info link-info--category">Politics</a></span>
+                                    </div>
+                                    <a href="#" class="margin-bottom-medium">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                </div>
+                                <div class="user-view__info--item--controls">
+                                    <button class="user-view__info--btn btn btn--small btn-black">
+                                        <svg class="btn__icon">
+                                            <use xlink:href="/img/sprite.svg#icon-trashcan"></use>
+                                        </svg>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="user-view__info--btn btn btn--small btn--brown btn--fill add-topic__btn">
+                                        <svg class="btn__icon user-view__info--icon">
+                                            <use xlink:href="/img/sprite.svg#icon-quill"></use>
+                                        </svg>
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="user-view__info--item">
+                                <img src="/img/politics.jpg" class="user-view__info--item--image" alt="">
+                                <div class="user-view__info--item--content">
+                                    <div class="topic__info--basics margin-bottom-small">
+                                        <span class="topic__info--time"><a href="#" class="link-info link-info--small">June 20, 2020</a></span>
+                                        <span class="topic__info--location"><a href="#" class="link-info link-info--small">Koblenz, Germany</a></span>
+                                        <span class="topic__info--category"><a href="#" class="link-info link-info--category">Politics</a></span>
+                                    </div>
+                                    <a href="#" class="margin-bottom-medium">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                </div>
+                                <div class="user-view__info--item--controls">
+                                    <button class="user-view__info--btn btn btn--small btn-black">
+                                        <svg class="btn__icon">
+                                            <use xlink:href="/img/sprite.svg#icon-trashcan"></use>
+                                        </svg>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="user-view__info--btn btn btn--small btn--brown btn--fill add-topic__btn">
+                                        <svg class="btn__icon user-view__info--icon">
+                                            <use xlink:href="/img/sprite.svg#icon-quill"></use>
+                                        </svg>
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="user-view__info--item">
+                                <img src="/img/politics.jpg" class="user-view__info--item--image" alt="">
+                                <div class="user-view__info--item--content">
+                                    <div class="topic__info--basics margin-bottom-small">
+                                        <span class="topic__info--time"><a href="#" class="link-info link-info--small">June 20, 2020</a></span>
+                                        <span class="topic__info--location"><a href="#" class="link-info link-info--small">Koblenz, Germany</a></span>
+                                        <span class="topic__info--category"><a href="#" class="link-info link-info--category">Politics</a></span>
+                                    </div>
+                                    <a href="#" class="margin-bottom-medium">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                </div>
+                                <div class="user-view__info--item--controls">
+                                    <button class="user-view__info--btn btn btn--small btn-black">
+                                        <svg class="btn__icon">
+                                            <use xlink:href="/img/sprite.svg#icon-trashcan"></use>
+                                        </svg>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="user-view__info--btn btn btn--small btn--brown btn--fill add-topic__btn">
+                                        <svg class="btn__icon user-view__info--icon">
+                                            <use xlink:href="/img/sprite.svg#icon-quill"></use>
+                                        </svg>
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="user-view__info--item">
+                                <img src="/img/politics.jpg" class="user-view__info--item--image" alt="">
+                                <div class="user-view__info--item--content">
+                                    <div class="topic__info--basics margin-bottom-small">
+                                        <span class="topic__info--time"><a href="#" class="link-info link-info--small">June 20, 2020</a></span>
+                                        <span class="topic__info--location"><a href="#" class="link-info link-info--small">Koblenz, Germany</a></span>
+                                        <span class="topic__info--category"><a href="#" class="link-info link-info--category">Politics</a></span>
+                                    </div>
+                                    <a href="#" class="margin-bottom-medium">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                </div>
+                                <div class="user-view__info--item--controls">
+                                    <button class="user-view__info--btn btn btn--small btn-black">
+                                        <svg class="btn__icon">
+                                            <use xlink:href="/img/sprite.svg#icon-trashcan"></use>
+                                        </svg>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="user-view__info--btn btn btn--small btn--brown btn--fill add-topic__btn">
+                                        <svg class="btn__icon user-view__info--icon">
+                                            <use xlink:href="/img/sprite.svg#icon-quill"></use>
+                                        </svg>
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="user-view__info--item">
+                                <img src="/img/politics.jpg" class="user-view__info--item--image" alt="">
+                                <div class="user-view__info--item--content">
+                                    <div class="topic__info--basics margin-bottom-small">
+                                        <span class="topic__info--time"><a href="#" class="link-info link-info--small">June 20, 2020</a></span>
+                                        <span class="topic__info--location"><a href="#" class="link-info link-info--small">Koblenz, Germany</a></span>
+                                        <span class="topic__info--category"><a href="#" class="link-info link-info--category">Politics</a></span>
+                                    </div>
+                                    <a href="#" class="margin-bottom-medium">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                </div>
+                                <div class="user-view__info--item--controls">
+                                    <button class="user-view__info--btn btn btn--small btn-black">
+                                        <svg class="btn__icon">
+                                            <use xlink:href="/img/sprite.svg#icon-trashcan"></use>
+                                        </svg>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="user-view__info--btn btn btn--small btn--brown btn--fill add-topic__btn">
+                                        <svg class="btn__icon user-view__info--icon">
+                                            <use xlink:href="/img/sprite.svg#icon-quill"></use>
+                                        </svg>
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="user-view__info--item">
+                                <img src="/img/politics.jpg" class="user-view__info--item--image" alt="">
+                                <div class="user-view__info--item--content">
+                                    <div class="topic__info--basics margin-bottom-small">
+                                        <span class="topic__info--time"><a href="#" class="link-info link-info--small">June 20, 2020</a></span>
+                                        <span class="topic__info--location"><a href="#" class="link-info link-info--small">Koblenz, Germany</a></span>
+                                        <span class="topic__info--category"><a href="#" class="link-info link-info--category">Politics</a></span>
+                                    </div>
+                                    <a href="#" class="margin-bottom-medium">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                </div>
+                                <div class="user-view__info--item--controls">
+                                    <button class="user-view__info--btn btn btn--small btn-black">
+                                        <svg class="btn__icon">
+                                            <use xlink:href="/img/sprite.svg#icon-trashcan"></use>
+                                        </svg>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="user-view__info--btn btn btn--small btn--brown btn--fill add-topic__btn">
+                                        <svg class="btn__icon user-view__info--icon">
+                                            <use xlink:href="/img/sprite.svg#icon-quill"></use>
+                                        </svg>
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="user-view__info--item">
+                                <img src="/img/politics.jpg" class="user-view__info--item--image" alt="">
+                                <div class="user-view__info--item--content">
+                                    <div class="topic__info--basics margin-bottom-small">
+                                        <span class="topic__info--time"><a href="#" class="link-info link-info--small">June 20, 2020</a></span>
+                                        <span class="topic__info--location"><a href="#" class="link-info link-info--small">Koblenz, Germany</a></span>
+                                        <span class="topic__info--category"><a href="#" class="link-info link-info--category">Politics</a></span>
+                                    </div>
+                                    <a href="#" class="margin-bottom-medium">Only one side gets to decide on everything. Is this really a democracy?</a>
+                                </div>
+                                <div class="user-view__info--item--controls">
+                                    <button class="user-view__info--btn btn btn--small btn-black">
+                                        <svg class="btn__icon">
+                                            <use xlink:href="/img/sprite.svg#icon-trashcan"></use>
+                                        </svg>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="user-view__info--btn btn btn--small btn--brown btn--fill add-topic__btn">
+                                        <svg class="btn__icon user-view__info--icon">
+                                            <use xlink:href="/img/sprite.svg#icon-quill"></use>
+                                        </svg>
+                                        <span>Update</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-view__info--settings user-view__info--block">
+                        <p class="user-view__info--title">Your account settings</p>
+                        <form class="form user-view__info--form user-view__info--profile">
+                            <div class="form__profile-picture">
+                                <img class="form__profile-picture--image" src="/img/deforestation.jpg" alt="">
+                                <span class="form__profile-picture--button"><span>Update your profile picture</span></span>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="username" placeholder="Username" value="Asnel Christian" minlength="50" maxlength="150">
+                                <label for="username" class="form__label">Username</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="email" class="form__input" id="email" placeholder="Email address" value="ngoullasob@gmail.com" minlength="50" maxlength="150">
+                                <label for="email" class="form__label">Email address</label>
+                            </div>
+                            <div class="form__group form__group--split">
+                                <div></div>
+                                <input type="submit" value="Save settings" class="btn btn--small btn-black">
+                            </div>
+                        </form>
+                        <div class="user-view__info--password">
+                            <p class="user-view__info--title">Password</p>
+                            <form class="form user-view__info--form user-view__info--password-form">
+                                <div class="form__group form__group--small-margin">
+                                    <input id="current-password" type="password" class="form__input" placeholder="Password" value="**********" required>
+                                    <label for="current-password" class="form__label">Password <span class="form__message"></span></label>
+                                </div>
+                                <div class="form__group form__group--small-margin">
+                                    <input id="password" type="password" class="form__input" placeholder="Password" required>
+                                    <label for="password" class="form__label">Password <span class="form__message"></span></label>
+                                </div>
+                                <div class="form__group form__group--small-margin">
+                                    <input id="passwordConfirm" type="password" class="form__input" placeholder="ConfirmPassword" required>
+                                    <label for="passwordConfirm" class="form__label">Confirm password <span class="form__message"></span></label>
+                                </div>
+
+                                <div class="form__group form__group--split">
+                                    <div></div>
+                                    <input type="submit" value="Update password" class="btn btn--small btn-black">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="user-view__info--reports user-view__info--block hide"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy; All rights reserved theobservers.org</p>
+    </footer>
+
+
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
+    <script src="https://unpkg.com/supercluster@6.0.2/dist/supercluster.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts-en.min.js"></script>
+
+
+    <script src="js/user.js"></script>
+</body>
+</html>

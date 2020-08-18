@@ -2205,12 +2205,6 @@ const sampleData = [
         "title": "some topic about some issue, from an observer"
     }
 ];
-mapboxgl.accessToken = `pk.eyJ1IjoiYXNuZWxjaHJpc3RpYW4iLCJhIjoiY2thd2Z0aXJ1MDdteTJ0bXU5NDU2bHZ4MCJ9.kChV328HGtNtda8XQQc4tA`;
-const map = new mapboxgl.Map({
-    container: 'mapbox-topics',
-    style: 'mapbox://styles/asnelchristian/ckawh4dvvehmi1io10tvsjvtk',
-    maxZoom: 17
-});
 const getPopupHTML = title => {
     return `<div class="sm-card">
                 <img src="img/politics.jpg" alt="" class="sm-card__img">
@@ -2225,124 +2219,164 @@ const getPopupHTML = title => {
                 </div>
             </div>`;
 };
+// mapboxgl.accessToken = `pk.eyJ1IjoiYXNuZWxjaHJpc3RpYW4iLCJhIjoiY2thd2Z0aXJ1MDdteTJ0bXU5NDU2bHZ4MCJ9.kChV328HGtNtda8XQQc4tA`;
 
-const getClusterElementClass = size => {
-    let min, max;
-    const classMap = {
-        'marker--cluster--20': [2, 20],
-        'marker--cluster--50': [20, 50],
-        'marker--cluster--100': [50, 100],
-        'marker--cluster--500': [100, 500],
-        'marker--cluster--1000': [500, 1000],
-        'marker--cluster--10000': [1000, 10000],
-        'marker--cluster--inf': [10000, Infinity],
-    };
-    const between = (val, min, max) => val >= min && val < max;
+const map = L.map('mapbox-topics').setView([51.505, -0.09], 13);
 
-    for (let klass of Object.keys(classMap)) {
-        [min, max] = classMap[klass];
-        if (between(size, min, max)) {
-            return klass;
-        }
-    }
-    return '';
-};
-const bounds = new mapboxgl.LngLatBounds();
-
-const index = new Supercluster({
-    log: true,
-    radius: 25,
-    extent: 256,
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',{
     maxZoom: 17,
-}).load(sampleData);
+    id: 'asnelchristian/ckawh4dvvehmi1io10tvsjvtk',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYXNuZWxjaHJpc3RpYW4iLCJhIjoiY2thd2Z0aXJ1MDdteTJ0bXU5NDU2bHZ4MCJ9.kChV328HGtNtda8XQQc4tA'
+}).addTo(map);
 
-sampleData.forEach((feature, i) =>  {
-    bounds.extend(feature.geometry.coordinates);
+const markers = L.markerClusterGroup({
+    polygonOptions: {color: '#ba9545'}
 });
 
-let markers = [];
-
-const update = zoom => {
-    // Remove all markers currently on the map
-    markers.forEach(marker => marker.remove());
-    markers = [];
-
-    // Compute the new clusters based on zoom level
-    let zoomLevel = zoom || parseInt(map.getZoom());
-    const clusters = index.getClusters(
-        [bounds.getWest(), bounds.getSouth(), bounds.getEast(), bounds.getNorth()],
-        zoomLevel
-    );
-    // Create appropriate markers for each clusters
-    clusters.forEach(cluster => {
-        let popupHtml = '';
-        const el = document.createElement('div');
-        el.classList.add('marker');
-
-        const marker = new mapboxgl.Marker({
-            element: el,
-            anchor: 'center'
-        }).setLngLat(cluster.geometry.coordinates);
-
-        if (cluster.properties && cluster.properties.cluster) {
-            el.classList.add('marker--cluster');
-            el.classList.add(getClusterElementClass(cluster.properties.point_count));
-            el.innerHTML = `<span>${cluster.properties.point_count_abbreviated}</span>`;
-
-            const expansionZoom = index.getClusterExpansionZoom(cluster.properties.cluster_id);
-            if ((zoomLevel >= index.options.maxZoom) ) {
-                const leaves = index.getChildren(cluster.properties.cluster_id);
-                leaves.forEach(leave => {popupHtml = `${popupHtml}${getPopupHTML(leave.title)}`});
-
-                el.removeEventListener('click', function(){});
-                el.addEventListener('click', function() {
-                    clusterList.innerHTML = popupHtml;
-                    clusterListContainer.classList.remove('hide');
-                })
-            } else {
-                el.addEventListener('click', function (e) {
-                    flyTo(cluster.geometry.coordinates, expansionZoom);
-                })
-            }
-        } else {
-            if (cluster.rank && cluster.rank <= 5) {
-                el.classList.add('marker--trending');
-            } else {
-                el.classList.add('marker--default');
-            }
-            popupHtml = getPopupHTML(cluster.title);
-            addPopup(marker, popupHtml, 'topic-popup');
-        }
-        markers.push(marker);
+sampleData.map(d => {
+    const markerIcon = L.divIcon({className: 'marker marker--default'});
+    const marker = L.marker(d.geometry.coordinates.reverse(), {icon: markerIcon})
+        .bindPopup(getPopupHTML('some thing is going on here!'))
+    markers.addLayer(marker);
     });
-    // Add all newly created markers to map
-    markers.forEach(marker => marker.addTo(map));
-};
 
-const addPopup = (marker, popupHtml, className) => {
-    marker.setPopup(new mapboxgl.Popup({className})
-        .setHTML(popupHtml)
-        .setMaxWidth('34rem'));
-};
+map.addLayer(markers);
 
-let ready = false;
+// map.fitBounds(group.getBounds());
 
-map.on('load',  () => {
-    ready = false;
-    update(12);
-    ready = true;
-});
+// map.invalidateSize();
 
-map.on('moveend', async () => {
-    if (!ready) return;
-    ready = false;
-    update();
-    ready = true;
-});
 
-const flyTo = (center, zoom) => {
-    if (!ready) return;
-    ready = false;
-    map.flyTo({center, zoom});
-    ready = true;
-};
+
+// const map = new mapboxgl.Map({
+//     container: 'mapbox-topics',
+//     style: 'mapbox://styles/asnelchristian/ckawh4dvvehmi1io10tvsjvtk',
+//     maxZoom: 17
+// });
+
+
+
+
+//
+// const getClusterElementClass = size => {
+//     let min, max;
+//     const classMap = {
+//         'marker--cluster--20': [2, 20],
+//         'marker--cluster--50': [20, 50],
+//         'marker--cluster--100': [50, 100],
+//         'marker--cluster--500': [100, 500],
+//         'marker--cluster--1000': [500, 1000],
+//         'marker--cluster--10000': [1000, 10000],
+//         'marker--cluster--inf': [10000, Infinity],
+//     };
+//     const between = (val, min, max) => val >= min && val < max;
+//
+//     for (let klass of Object.keys(classMap)) {
+//         [min, max] = classMap[klass];
+//         if (between(size, min, max)) {
+//             return klass;
+//         }
+//     }
+//     return '';
+// };
+// const bounds = new mapboxgl.LngLatBounds();
+
+// const index = new Supercluster({
+//     log: true,
+//     radius: 25,
+//     extent: 256,
+//     maxZoom: 17,
+// }).load(sampleData.slice(0, 1));
+//
+// sampleData.forEach((feature, i) =>  {
+//     bounds.extend(feature.geometry.coordinates);
+// });
+//
+// let markers = [];
+//
+// const update = zoom => {
+//     // Remove all markers currently on the map
+//     markers.forEach(marker => marker.remove());
+//     markers = [];
+//
+//     // Compute the new clusters based on zoom level
+//     let zoomLevel = zoom || parseInt(map.getZoom());
+//     const clusters = index.getClusters(
+//         [bounds.getWest(), bounds.getSouth(), bounds.getEast(), bounds.getNorth()],
+//         zoomLevel
+//     );
+//     // Create appropriate markers for each clusters
+//     clusters.forEach(cluster => {
+//         let popupHtml = '';
+//         const el = document.createElement('div');
+//         el.classList.add('marker');
+//
+//         const marker = new mapboxgl.Marker({
+//             element: el,
+//             anchor: 'center'
+//         }).setLngLat(cluster.geometry.coordinates);
+//
+//         if (cluster.properties && cluster.properties.cluster) {
+//             el.classList.add('marker--cluster');
+//             el.classList.add(getClusterElementClass(cluster.properties.point_count));
+//             el.innerHTML = `<span>${cluster.properties.point_count_abbreviated}</span>`;
+//
+//             const expansionZoom = index.getClusterExpansionZoom(cluster.properties.cluster_id);
+//             if ((zoomLevel >= index.options.maxZoom) ) {
+//                 const leaves = index.getChildren(cluster.properties.cluster_id);
+//                 leaves.forEach(leave => {popupHtml = `${popupHtml}${getPopupHTML(leave.title)}`});
+//
+//                 el.removeEventListener('click', function(){});
+//                 el.addEventListener('click', function() {
+//                     clusterList.innerHTML = popupHtml;
+//                     clusterListContainer.classList.remove('hide');
+//                 })
+//             } else {
+//                 el.addEventListener('click', function (e) {
+//                     flyTo(cluster.geometry.coordinates, expansionZoom);
+//                 })
+//             }
+//         } else {
+//             if (cluster.rank && cluster.rank <= 5) {
+//                 el.classList.add('marker--trending');
+//             } else {
+//                 el.classList.add('marker--default');
+//             }
+//             popupHtml = getPopupHTML(cluster.title);
+//             addPopup(marker, popupHtml, 'topic-popup');
+//         }
+//         markers.push(marker);
+//     });
+//     // Add all newly created markers to map
+//     markers.forEach(marker => marker.addTo(map));
+// };
+//
+// const addPopup = (marker, popupHtml, className) => {
+//     marker.setPopup(new mapboxgl.Popup({className})
+//         .setHTML(popupHtml)
+//         .setMaxWidth('34rem'));
+// };
+//
+// let ready = false;
+//
+// map.on('load',  () => {
+//     ready = false;
+//     update(12);
+//     ready = true;
+// });
+//
+// map.on('moveend', async () => {
+//     if (!ready) return;
+//     ready = false;
+//     update();
+//     ready = true;
+// });
+//
+// const flyTo = (center, zoom) => {
+//     if (!ready) return;
+//     ready = false;
+//     map.flyTo({center, zoom});
+//     ready = true;
+// };

@@ -23,15 +23,16 @@ topicsMapViewToggle.addEventListener('click', e => {
     topicsPagination.classList.add('hide');
     topicsMap.classList.remove('hide');
 
-    map.resize();
-    map.fitBounds(bounds, {
-        padding: {
-            top: 25,
-            bottom: 35,
-            right: 25,
-            left: 25
-        }
-    });
+    map.invalidateSize();
+    // map.resize();
+    // map.fitBounds(bounds, {
+    //     padding: {
+    //         top: 25,
+    //         bottom: 35,
+    //         right: 25,
+    //         left: 25
+    //     }
+    // });
 });
 
 const createTopicButtons = document.querySelectorAll('.add-topic__btn');
